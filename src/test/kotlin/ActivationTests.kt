@@ -1,7 +1,7 @@
 import org.jetbrains.spek.api.Spek
 import kotlin.test.assertEquals
 
-class ActivationTest : Spek() {init {
+class ActivationTests : Spek() { init {
     given("an identity activation function") {
         val a = Identity
 
