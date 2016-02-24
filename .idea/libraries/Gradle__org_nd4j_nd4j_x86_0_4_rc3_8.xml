@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.nd4j:nd4j-x86:0.4-rc3.8">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.nd4j/nd4j-x86/0.4-rc3.8/ac82fac335e49d29588ce7b0bb241a3e8eb9ab85/nd4j-x86-0.4-rc3.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.nd4j/nd4j-x86/0.4-rc3.8/567363677a0664cde472fa49bac64a976acf2d53/nd4j-x86-0.4-rc3.8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

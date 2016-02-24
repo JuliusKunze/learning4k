@@ -20,7 +20,7 @@ class NetworkTests : Spek() { init {
             }
 
             it("none should only have 0 values") {
-                assert(m.all { matrix -> matrix.elements.allValues().all { it == 0.0f } })
+                assert(m.none { it.elements.allValues().all { it == 0.0f } })
             }
         }
     }

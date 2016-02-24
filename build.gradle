@@ -23,7 +23,9 @@ repositories {
 
 dependencies {
     compile "org.jzy3d:jzy3d-api:0.9.1"
-    compile "org.nd4j:nd4j-api:0.4-rc3.8"
+
+    // see "Dependencies and Backends" here: http://deeplearning4j.org/quickstart.html
+    compile "org.nd4j:nd4j-x86:0.4-rc3.8"
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     testCompile "org.jetbrains.spek:spek:$spek_version"

@@ -36,5 +36,26 @@
     <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.spek:spek:0.1.195" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-reflect:1.0.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-test:1.0.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.nd4j:nd4j-x86:0.4-rc3.8" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.fommil.netlib:all:1.1.2:pom" level="project" />
+    <orderEntry type="library" name="Gradle: org.jblas:jblas:1.2.4" level="project" />
+    <orderEntry type="library" name="Gradle: org.bytedeco:javacpp:0.11" level="project" />
+    <orderEntry type="library" name="Gradle: net.sourceforge.f2j:arpack_combined_all:0.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.fommil:jniloader:1.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.fommil.netlib:core:1.1.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.fommil.netlib:netlib-native_ref-osx-x86_64:1.1:natives" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.fommil.netlib:netlib-native_ref-linux-x86_64:1.1:natives" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.fommil.netlib:netlib-native_ref-linux-i686:1.1:natives" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.fommil.netlib:netlib-native_ref-win-x86_64:1.1:natives" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.fommil.netlib:netlib-native_ref-win-i686:1.1:natives" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.fommil.netlib:netlib-native_ref-linux-armhf:1.1:natives" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.fommil.netlib:netlib-native_system-osx-x86_64:1.1:natives" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.fommil.netlib:netlib-native_system-linux-x86_64:1.1:natives" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.fommil.netlib:netlib-native_system-linux-i686:1.1:natives" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.fommil.netlib:netlib-native_system-linux-armhf:1.1:natives" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.fommil.netlib:netlib-native_system-win-x86_64:1.1:natives" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.fommil.netlib:netlib-native_system-win-i686:1.1:natives" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.fommil.netlib:native_ref-java:1.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.fommil.netlib:native_system-java:1.1" level="project" />
   </component>
 </module>
