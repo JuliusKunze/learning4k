@@ -1,4 +1,5 @@
 import org.jetbrains.spek.api.Spek
+import kotlin.test.assertEquals
 
 class NetworkTests : Spek() { init {
     given("a network with 3 layers") {
@@ -16,11 +17,25 @@ class NetworkTests : Spek() { init {
             }
 
             it("each should have only non-negative values below the max value") {
-                assert(m.all { matrix -> matrix.elements.allValues().all { 0 <= it && it < matrix.randomInitializationMax } })
+                assert(m.all { matrix -> matrix.elements.flattenToList().all { 0 <= it && it < Weights.defaultRandomInitializationMax } })
             }
 
             it("none should only have 0 values") {
-                assert(m.none { it.elements.allValues().all { it == 0.0f } })
+                assert(m.none { matrix -> matrix.elements.flattenToList().all { it == 0.0f } })
+            }
+        }
+    }
+
+    given("a single layer") {
+        val layer = Weights(WeightsShape(inputSize = 3, outputSize = 2, activation = Relu))
+
+        on("invoking it") {
+            val x = listOf(5.0f, 3.0f, 1.0f)
+            val y = layer(x)
+
+            it("should return a column of 2 values") {
+                assertEquals(2, y.count())
+                assert(y.all { it >= 0 })
             }
         }
     }

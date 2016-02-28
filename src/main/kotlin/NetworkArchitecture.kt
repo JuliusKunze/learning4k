@@ -1,12 +1,18 @@
-class Layer(val size: Int, val activation: Activation)
+data class Layer(val size: Int, val activation: Activation)
 
-/**
- * Represents the shape of a weight matrix between two neuron layers.
- */
-data class WeightsMatrixShape(val inputSize: Int, val outputSize: Int)
+data class WeightsShape(val inputSize: Int, val outputSize: Int, val activation: Activation)
 
-data class NetworkArchitecture(val layers: List<Layer>) {
+data class NetworkArchitecture private constructor(
+        val inputActivation: Activation = Identity,
+        val weightsShapes: List<WeightsShape>) {
+    constructor(layers: List<Layer>) : this(inputActivation = layers.first().activation,
+            weightsShapes = layers.withIndex().drop(1).map
+            {
+                WeightsShape(
+                        inputSize = layers[it.index - 1].size,
+                        outputSize = it.value.size,
+                        activation = it.value.activation)
+            })
+
     constructor(vararg layers: Layer) : this(layers.toList())
-
-    val weightsShapes = layers.indices.drop(1).map { WeightsMatrixShape(layers[it-1].size, layers[it].size)}
 }

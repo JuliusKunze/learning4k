@@ -3,19 +3,27 @@ import kotlin.test.assertEquals
 
 class NetworkArchitectureTests : Spek() { init {
     given("a network architecture of 3 layers") {
-        val a = NetworkArchitecture(listOf(
+        val n = NetworkArchitecture(listOf(
                 Layer(3, Identity),
                 Layer(4, Relu),
                 Layer(5, Relu)
         ))
 
+        on("getting the input activation function") {
+            val a = n.inputActivation
+
+            it("should be the given function") {
+                assertEquals(Identity, a)
+            }
+        }
+
         on("getting the weights shapes") {
-            val result = a.weightsShapes
+            val result = n.weightsShapes
 
             it("should contain two weight shapes with according sizes") {
                 assertEquals(result, listOf(
-                        WeightsMatrixShape(3, 4),
-                        WeightsMatrixShape(4, 5)
+                        WeightsShape(3, 4, Relu),
+                        WeightsShape(4, 5, Relu)
                 ))
             }
         }

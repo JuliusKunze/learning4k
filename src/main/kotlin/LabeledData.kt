@@ -1,0 +1,1 @@
+data class LabeledData(val input: List<Float>, val output: List<Float>)

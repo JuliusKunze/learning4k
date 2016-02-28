@@ -1,5 +1,5 @@
 interface Activation {
-    fun invoke(value: Float): Float
+    operator fun invoke(value: Float): Float
 }
 
 object Identity : Activation {
@@ -9,4 +9,3 @@ object Identity : Activation {
 object Relu : Activation {
     override operator fun invoke(value: Float) = Math.max(0.0f, value)
 }
-
