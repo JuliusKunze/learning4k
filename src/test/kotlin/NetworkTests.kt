@@ -49,7 +49,7 @@ class NetworkTests : Spek() { init {
             val y = weights(listOf(1.5f))
 
             it("should return three neurons activations") {
-                assertEquals(y, listOf(1f, 3f*1.5f, 4f+4f*1.5f))
+                assertEquals(y, listOf(1f, 3f * 1.5f, 4f + 4f * 1.5f))
             }
         }
     }

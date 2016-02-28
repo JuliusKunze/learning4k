@@ -15,4 +15,4 @@ fun INDArray.allRows() = rowRange().map { getColumn(it) }
 fun INDArray.flattenToList() = rowRange().flatMap { row -> columnRange().map { column -> getFloat(row, column) } }
 fun INDArray.toList() = if (isColumnVector || isRowVector)
     flattenToList() else
-    throw IllegalStateException("Row or column expected.")
+    throw IllegalStateException("Row or column vector expected.")

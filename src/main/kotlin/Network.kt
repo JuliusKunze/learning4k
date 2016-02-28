@@ -23,11 +23,15 @@ class Weights(val shape: WeightsShape, val elements: INDArray) {
     this(shape, Nd4j.rand(shape.inputSize + 1, shape.outputSize, 0.0, randomInitializationMax, DefaultRandom(seed)))
 
     operator fun invoke(input: List<Float>): List<Float> {
-        if(input.count() != shape.inputSize) throw IllegalArgumentException("${shape.inputSize} input values expected.")
-        val x = (listOf(1.0f) + input).toColumn()
+        if (input.count() != shape.inputSize)
+            throw IllegalArgumentException("${shape.inputSize} input values expected, found ${input.count()}.")
+
+        val x = input.toColumnWithBiasUnit()
         val y = elements.transpose() * x
         return y.toList().map { shape.activation(it) }
     }
+
+    private fun List<Float>.toColumnWithBiasUnit() = (listOf(1.0f) + this).toColumn()
 
     companion object {
         val defaultRandomInitializationMax = 0.01
