@@ -21,21 +21,35 @@ class NetworkTests : Spek() { init {
             }
 
             it("none should only have 0 values") {
-                assert(m.none { matrix -> matrix.elements.flattenToList().all { it == 0.0f } })
+                assert(m.none { matrix -> matrix.elements.flattenToList().all { it == 0f } })
             }
         }
     }
 
-    given("a single layer") {
-        val layer = Weights(WeightsShape(inputSize = 3, outputSize = 2, activation = Relu))
+    given("a weights matrix") {
+        val weights = Weights(WeightsShape(inputSize = 3, outputSize = 2, activation = Relu))
 
         on("invoking it") {
-            val x = listOf(5.0f, 3.0f, 1.0f)
-            val y = layer(x)
+            val x = listOf(5f, 3f, 1f)
+            val y = weights(x)
 
             it("should return a column of 2 values") {
                 assertEquals(2, y.count())
                 assert(y.all { it >= 0 })
+            }
+        }
+    }
+
+    given("a tiny weights matrix") {
+        val weights = Weights(WeightsShape(inputSize = 1, outputSize = 3, activation = Relu), elements = listOf(
+                listOf(1f, 0f, 4f),
+                listOf(0f, 3f, 4f)))
+
+        on("invoking it") {
+            val y = weights(listOf(1.5f))
+
+            it("should return three neurons activations") {
+                assertEquals(y, listOf(1f, 3f*1.5f, 4f+4f*1.5f))
             }
         }
     }

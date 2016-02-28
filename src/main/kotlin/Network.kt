@@ -14,13 +14,20 @@ class Weights(val shape: WeightsShape, val elements: INDArray) {
         assert(shape.inputSize + 1 == elements.rows())
     }
 
+    constructor(shape: WeightsShape, elements: List<List<Float>>) : this(shape, Nd4j.create(elements.map { it.toFloatArray() }.toTypedArray()))
+
     constructor(
             shape: WeightsShape,
             randomInitializationMax: Double = defaultRandomInitializationMax,
             seed: Long = System.currentTimeMillis()) :
     this(shape, Nd4j.rand(shape.inputSize + 1, shape.outputSize, 0.0, randomInitializationMax, DefaultRandom(seed)))
 
-    operator fun invoke(input: List<Float>) = (elements.transpose() * ((listOf(1.0f) + input).toColumn())).toList().map { shape.activation(it) }
+    operator fun invoke(input: List<Float>): List<Float> {
+        if(input.count() != shape.inputSize) throw IllegalArgumentException("${shape.inputSize} input values expected.")
+        val x = (listOf(1.0f) + input).toColumn()
+        val y = elements.transpose() * x
+        return y.toList().map { shape.activation(it) }
+    }
 
     companion object {
         val defaultRandomInitializationMax = 0.01
