@@ -2,7 +2,7 @@ import org.nd4j.linalg.api.ndarray.INDArray
 import org.nd4j.linalg.factory.Nd4j
 
 fun List<Float>.toRow() = Nd4j.create(this.toFloatArray())
-fun List<Float>.toColumn() = Nd4j.create(this.toFloatArray(), listOf(size, 1).toIntArray())
+fun List<Float>.toColumn() = Nd4j.create(this.toFloatArray(), intArrayOf(size, 1))
 
 operator fun INDArray.times(other: INDArray) = mmul(other)
 

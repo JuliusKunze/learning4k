@@ -53,5 +53,34 @@ class NetworkTests : Spek() { init {
             }
         }
     }
+
+    given("a three layer network") {
+        val network = Network(
+                Layer(1, Identity),
+                Layer(1, Relu),
+                Layer(1, Relu),
+                Layer(1, Relu)
+        )
+
+        val weights = listOf(
+                listOf(0.5f, 3.0f),
+                listOf(1.0f, 5.0f),
+                listOf(2.0f, 3.0f)
+        )
+
+        weights.withIndex().forEach { network.weightMatrices[it.index].elements.putRow(0, it.value.toRow()) }
+
+        on("invoking it") {
+            val x = 1.5f
+            val y = network(listOf(x))
+
+            it("should return a single result") {
+                val h1 = 0.5f + x * 3.0f
+                val h2 = 1.0f + h1 * 5.0f
+                val result = 2.0f + h2 * 3.0f
+                assertEquals(result, y.single())
+            }
+        }
+    }
 }
 }

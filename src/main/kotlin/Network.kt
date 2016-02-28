@@ -6,6 +6,8 @@ class Network(val shape: NetworkArchitecture) {
     constructor(vararg layers: Layer) : this(shape = NetworkArchitecture(layers.toList()))
 
     val weightMatrices = shape.weightsShapes.map { Weights(it) }
+
+    operator fun invoke(input: List<Float>) = weightMatrices.fold(input, { data, weight -> weight(data) })
 }
 
 class Weights(val shape: WeightsShape, val elements: INDArray) {
