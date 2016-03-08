@@ -3,7 +3,7 @@ import kotlin.test.assertEquals
 
 class NetworkArchitectureTests : Spek() { init {
     given("a network architecture of 3 layers") {
-        val n = NetworkArchitecture(listOf(
+        val n = NetworkShape(listOf(
                 Layer(3, Identity),
                 Layer(4, Relu),
                 Layer(5, Relu)

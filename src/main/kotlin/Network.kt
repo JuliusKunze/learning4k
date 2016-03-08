@@ -2,22 +2,60 @@ import org.nd4j.linalg.api.ndarray.INDArray
 import org.nd4j.linalg.api.rng.DefaultRandom
 import org.nd4j.linalg.factory.Nd4j
 
-class Network(val shape: NetworkArchitecture) {
-    constructor(vararg layers: Layer) : this(shape = NetworkArchitecture(layers.toList()))
+class Network private constructor(val shape: NetworkShape, val weightsMatrices: List<WeightsMatrix>) {
+    constructor(shape: NetworkShape) : this(shape = shape, weightsMatrices = shape.weightsShapes.map { WeightsMatrix(it) })
 
-    val weightMatrices = shape.weightsShapes.map { WeightsMatrix(it) }
+    constructor(vararg layers: Layer) : this(shape = NetworkShape(layers.toList()))
 
-    operator fun invoke(input: List<Float>) = weightMatrices.fold(input, { data, weight -> weight(data) })
+    operator fun invoke(input: List<Float>) = weightsMatrices.fold(input, { data, weight -> weight(data) })
 
-    fun train(example: LabeledData) {
-        val gradientMatrices = backpropagate(weightMatrices, example)
-        //val newWeightMatrices = decent(weightMatrices, gradientMatrices, learningRate = )
+    fun descended(gradientMatrices: List<INDArray>, learningRate: Float = 1e-2f) =
+            Network(shape, weightsMatrices.zip(gradientMatrices) { weightMatrix, gradientMatrix -> WeightsMatrix(weightMatrix.shape, weightMatrix.elements + gradientMatrix * learningRate) })
+
+    fun copy() = Network(shape, weightsMatrices.map { it.copy() })
+}
+
+interface Backpropagation {
+    operator fun invoke(network: Network, example: LabeledData): List<INDArray>
+
+    fun trained(network: Network, example: LabeledData, learningRate: Float = 1e-2f): Network {
+        val gradientMatrices = invoke(network, example)
+        return network.descended(gradientMatrices, learningRate)
     }
+}
 
-    private fun backpropagate(weightMatrices: List<WeightsMatrix>, example: LabeledData): List<INDArray> {
-        /*val error =
-        val elements = matrix()*/
-        return null!!
+class NumericalBackpropagation(val distance: Float = 1e-5f, val cost: Cost) : Backpropagation {
+    override fun invoke(network: Network, example: LabeledData): List<INDArray> {
+        val modified = network.copy()
+        return network.weightsMatrices.mapIndexed { weightsMatrixIndex, weightsMatrix ->
+            matrix(rowCount = weightsMatrix.shape.matrixRowCount, columnCount = weightsMatrix.shape.matrixColumnCount)
+            { row, column ->
+                val originalValue = weightsMatrix.elements[row, column]
+
+                fun set(alternativeValue: Float) {
+                    modified.weightsMatrices[weightsMatrixIndex].elements[row, column] = alternativeValue
+                }
+
+                fun cost(alternativeValue: Float): Float {
+                    set(alternativeValue)
+                    val cost = cost(example, modified)
+                    set(originalValue)
+                    return cost
+                }
+
+                (cost(originalValue + distance) - cost(originalValue - distance)) / (2 * distance)
+            }
+        }
+    }
+}
+
+class StandardBackpropagation(val cost: Cost) : Backpropagation {
+    override fun invoke(network: Network, example: LabeledData): List<INDArray> {
+        val output = network.invoke(example.input)
+        val prediction = example.output
+        val deltaOutput = output.zip(prediction) { output, prediction -> output - prediction }
+
+        throw NotImplementedError()
     }
 }
 
@@ -36,7 +74,7 @@ class WeightsMatrix(val shape: WeightsShape, val elements: INDArray) {
     this(shape, Nd4j.rand(shape.matrixRowCount, shape.matrixColumnCount, 0.0, randomInitializationMax, DefaultRandom(seed)))
 
     operator fun invoke(input: List<Float>): List<Float> {
-        if (input.count()  != shape.inputSize)
+        if (input.count() != shape.inputSize)
             throw IllegalArgumentException("${shape.inputSize} input values expected, found ${input.count()}.")
 
         val x = input.toColumnWithBiasUnit()
@@ -49,4 +87,6 @@ class WeightsMatrix(val shape: WeightsShape, val elements: INDArray) {
     companion object {
         val defaultRandomInitializationMax = 0.01
     }
+
+    fun copy() = WeightsMatrix(shape, elements = elements.dup())
 }

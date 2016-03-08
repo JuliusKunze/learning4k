@@ -10,7 +10,7 @@ class NetworkTests : Spek() { init {
         )
 
         on("getting the weight matrices") {
-            val m = a.weightMatrices
+            val m = a.weightsMatrices
 
             it("should be 2") {
                 assert(m.count() == 2)
@@ -68,7 +68,7 @@ class NetworkTests : Spek() { init {
                 listOf(2.0f, 3.0f)
         )
 
-        weights.withIndex().forEach { network.weightMatrices[it.index].elements.putRow(0, it.value.toRow()) }
+        weights.withIndex().forEach { network.weightsMatrices[it.index].elements.putRow(0, it.value.toRow()) }
 
 
         val x = 1.5f
