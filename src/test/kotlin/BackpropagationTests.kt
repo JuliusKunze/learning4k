@@ -32,23 +32,20 @@ class BackpropagationTests : Spek() { init {
             }
         }
 
-
         for (i in 0..100) {
             on("training a randomly initialized network with the same example many times") {
-                val newNetwork = NumericalBackpropagation().trained(randomNetwork(), (1..1000).map { example }, learningRate = 0.1f)
+                val newNetwork = NumericalBackpropagation().trained(randomNetwork(), (1..100).map { example }, learningRate = 0.1f)
 
                 it("it should have gradient matrices all zero") {
                     val gradientsMatrices = NumericalBackpropagation().gradientsMatrices(newNetwork, example)
                     gradientsMatrices.forEach {
                         it.flattenToList().forEach {
-                            assert(it < 1e-5f) { "$gradientsMatrices" }
+                            assert(-1e-4f < it && it < 1e-4f) { "$it from $gradientsMatrices" }
                         }
                     }
-
                 }
             }
         }
     }
 }
-
 }
