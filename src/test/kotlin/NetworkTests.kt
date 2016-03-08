@@ -55,6 +55,50 @@ class NetworkTests : Spek() { init {
     }
 
     given("a three layer network") {
+        val network = threeLayerNetworkWith1InputAnd1Output()
+
+        on("invoking it on an example") {
+            val y = network(listOf(x))
+
+            it("should return a the expected result") {
+                assertEquals(expectedY, y.single())
+            }
+        }
+
+        on("getting the squared error for the exact input/output of the network") {
+            val error = SquaredError(exampleWithoutError, network)
+
+            it("should be 0") {
+                assertEquals(error, 0.0f)
+            }
+        }
+
+        on("getting the squared error for the netowork output + 2") {
+            val error = SquaredError(LabeledData(listOf(x), listOf(expectedY + 2)), network)
+
+            it("should be 4/2") {
+                assertEquals(error, 4f / 2)
+            }
+        }
+
+        on("training it with the outcome value using numerical backpropagation") {
+            val backpropagation = NumericalBackpropagation()
+
+            val newNetwork = backpropagation.trained(network, exampleWithoutError, learningRate = 0.1f)
+
+            it("should not change") {
+                assertEquals(newNetwork(listOf(x)), listOf(expectedY))
+            }
+        }
+    }
+}
+    val x = 1.5f
+    val h1 = 0.5f + x * 3.0f
+    val h2 = 1.0f + h1 * 5.0f
+    val expectedY = 2.0f + h2 * 3.0f
+    val exampleWithoutError = LabeledData(listOf(x), listOf(expectedY))
+
+    fun threeLayerNetworkWith1InputAnd1Output(): Network {
         val network = Network(
                 Layer(1, Identity),
                 Layer(1, Relu),
@@ -69,43 +113,6 @@ class NetworkTests : Spek() { init {
         )
 
         weights.withIndex().forEach { network.weightsMatrices[it.index].elements.putRow(0, it.value.toRow()) }
-
-
-        val x = 1.5f
-
-        val h1 = 0.5f + x * 3.0f
-        val h2 = 1.0f + h1 * 5.0f
-        val expectedY = 2.0f + h2 * 3.0f
-
-        on("invoking it") {
-            val y = network(listOf(x))
-
-            it("should return a single result") {
-                assertEquals(expectedY, y.single())
-            }
-        }
-
-        on("getting the squared error for the exact input/output of the network") {
-            val error = SquaredError(
-                    labeledData = LabeledData(listOf(x), listOf(expectedY)),
-                    network = network
-            )
-
-            it("should be 0") {
-                assertEquals(error, 0.0f)
-            }
-        }
-
-        on("getting the squared error for the netowork output + 2") {
-            val error = SquaredError(
-                    labeledData = LabeledData(listOf(x), listOf(expectedY + 2)),
-                    network = network
-            )
-
-            it("should be 4/2") {
-                assertEquals(error, 4f / 2)
-            }
-        }
+        return network
     }
-}
 }

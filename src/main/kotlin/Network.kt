@@ -16,16 +16,16 @@ class Network private constructor(val shape: NetworkShape, val weightsMatrices: 
 }
 
 interface Backpropagation {
-    operator fun invoke(network: Network, example: LabeledData): List<INDArray>
+    fun gradients(network: Network, example: LabeledData): List<INDArray>
 
-    fun trained(network: Network, example: LabeledData, learningRate: Float = 1e-2f): Network {
-        val gradientMatrices = invoke(network, example)
+    fun trained(network: Network, example: LabeledData, learningRate: Float): Network {
+        val gradientMatrices = gradients(network, example)
         return network.descended(gradientMatrices, learningRate)
     }
 }
 
-class NumericalBackpropagation(val distance: Float = 1e-5f, val cost: Cost) : Backpropagation {
-    override fun invoke(network: Network, example: LabeledData): List<INDArray> {
+class NumericalBackpropagation(val distance: Float = 1e-5f, val cost: Cost = SquaredError) : Backpropagation {
+    override fun gradients(network: Network, example: LabeledData): List<INDArray> {
         val modified = network.copy()
         return network.weightsMatrices.mapIndexed { weightsMatrixIndex, weightsMatrix ->
             matrix(rowCount = weightsMatrix.shape.matrixRowCount, columnCount = weightsMatrix.shape.matrixColumnCount)
@@ -49,8 +49,8 @@ class NumericalBackpropagation(val distance: Float = 1e-5f, val cost: Cost) : Ba
     }
 }
 
-class StandardBackpropagation(val cost: Cost) : Backpropagation {
-    override fun invoke(network: Network, example: LabeledData): List<INDArray> {
+class StandardBackpropagation(val cost: Cost = SquaredError) : Backpropagation {
+    override fun gradients(network: Network, example: LabeledData): List<INDArray> {
         val output = network.invoke(example.input)
         val prediction = example.output
         val deltaOutput = output.zip(prediction) { output, prediction -> output - prediction }
