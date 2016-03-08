@@ -72,9 +72,9 @@ class WeightsMatrix(val shape: WeightsShape, val elements: INDArray) {
 
     constructor(
             shape: WeightsShape,
-            randomInitializationMax: Double = defaultRandomInitializationMax,
+            randomInitEpsilon: Double = defaultRandomInitEpsilon,
             seed: Long = System.currentTimeMillis()) :
-    this(shape, Nd4j.rand(shape.matrixRowCount, shape.matrixColumnCount, 0.0, randomInitializationMax, DefaultRandom(seed)))
+    this(shape, Nd4j.rand(shape.matrixRowCount, shape.matrixColumnCount, -randomInitEpsilon, randomInitEpsilon, DefaultRandom(seed)))
 
     operator fun invoke(input: List<Float>): List<Float> {
         if (input.count() != shape.inputSize)
@@ -88,7 +88,7 @@ class WeightsMatrix(val shape: WeightsShape, val elements: INDArray) {
     private fun List<Float>.toColumnWithBiasUnit() = (listOf(1.0f) + this).toColumn()
 
     companion object {
-        val defaultRandomInitializationMax = 0.01
+        val defaultRandomInitEpsilon = 0.01
     }
 
     fun copy() = WeightsMatrix(shape, elements = elements.dup())

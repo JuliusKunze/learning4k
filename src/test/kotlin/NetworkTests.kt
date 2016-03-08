@@ -16,8 +16,8 @@ class NetworkTests : Spek() { init {
                 assert(m.count() == 2)
             }
 
-            it("each should have only non-negative values below the max value") {
-                assert(m.all { matrix -> matrix.elements.flattenToList().all { 0 <= it && it < WeightsMatrix.defaultRandomInitializationMax } })
+            it("each should only have a value between epsilon and -epsilon") {
+                assert(m.all { matrix -> matrix.elements.flattenToList().all { -WeightsMatrix.defaultRandomInitEpsilon <= it && it < WeightsMatrix.defaultRandomInitEpsilon } })
             }
 
             it("none should only have 0 values") {
@@ -99,39 +99,11 @@ class NetworkTests : Spek() { init {
             }
         }
 
-        on("getting the squared error for the netowork output + 2") {
+        on("getting the squared error for the network output + 2") {
             val error = SquaredError(LabeledData(listOf(x), listOf(expectedY + 2)), network())
 
             it("should be 4/2") {
                 assertEquals(error, 4f / 2)
-            }
-        }
-
-        on("training it with the outcome value using numerical backpropagation") {
-            val newNetwork = NumericalBackpropagation().trained(network(), example, learningRate = 0.1f)
-
-            it("should not change") {
-                assertEquals(0f, SquaredError(example, newNetwork))
-            }
-        }
-
-        on("training it with the outcome value using numerical backpropagation many times") {
-            val newNetwork = NumericalBackpropagation().trained(network(), (1..1000).map { example }, learningRate = 0.1f)
-
-            it("should not change") {
-                assertEquals(0f, SquaredError(example, newNetwork))
-            }
-        }
-
-
-        for (i in 0..100) {
-            on("training a randomly initialized network with the same example many times") {
-                val newNetwork = NumericalBackpropagation().trained(untrainedNetwork(), (1..100).map { example }, learningRate = 0.1f)
-
-                it("it should have no error for the example + $newNetwork") {
-                    val error = SquaredError(example, newNetwork)
-                    assert(error < 1e-2f) { "$error $newNetwork" }
-                }
             }
         }
     }

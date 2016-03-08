@@ -25,9 +25,9 @@
     <option name="FILTER_BY_CURRENT_PROJECT" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66d22208-b781-49a2-a4a1-155e9901d93c" name="Default" comment="added backprop training test">
+    <list default="true" id="66d22208-b781-49a2-a4a1-155e9901d93c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/kotlin/BackpropagationTests.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/kotlin/Nd4jExtensions.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/Nd4jExtensions.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/kotlin/Network.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/Network.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/kotlin/NetworkTests.kt" afterPath="$PROJECT_DIR$/src/test/kotlin/NetworkTests.kt" />
     </list>
@@ -96,13 +96,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Network.kt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/Network.kt">
+      <file leaf-file-name="NetworkTests.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/kotlin/NetworkTests.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.670418">
-              <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.62700963">
+              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
               <folding>
-                <element signature="e#0#124#0" expanded="true" />
+                <element signature="e#0#66#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -113,6 +113,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Class" />
         <option value="Kotlin File" />
       </list>
     </option>
@@ -546,8 +547,10 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/NetworkArchitecture.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/NumericalBackpropagationTests.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Nd4jExtensions.kt" />
-        <option value="$PROJECT_DIR$/src/test/kotlin/NetworkTests.kt" />
+        <option value="$PROJECT_DIR$/src/test/kotlin/BackpropagationTests.java" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Network.kt" />
+        <option value="$PROJECT_DIR$/src/test/kotlin/BackpropagationTests.kt" />
+        <option value="$PROJECT_DIR$/src/test/kotlin/NetworkTests.kt" />
       </list>
     </option>
   </component>
@@ -772,27 +775,6 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="ActivationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="learning4k" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ActivationTests" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="false" name="NetworkArchitectureTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="learning4k" />
@@ -821,6 +803,27 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Nd4jExtensionsTests" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="BackpropagationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="learning4k" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BackpropagationTests" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -1260,17 +1263,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.kotlin in learning4k" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.NetworkTests" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.ActivationTests" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.NetworkArchitectureTests" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.Nd4jExtensionsTests" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.NetworkArchitectureTests" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.Nd4jExtensionsTests" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.BackpropagationTests" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.kotlin in learning4k" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.NetworkTests" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.Nd4jExtensionsTests" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.NetworkArchitectureTests" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.ActivationTests" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.BackpropagationTests" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.NetworkTests" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.Nd4jExtensionsTests" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.NetworkArchitectureTests" />
       </list>
     </recent_temporary>
   </component>
@@ -1290,7 +1293,7 @@
       <workItem from="1456349067223" duration="138000" />
       <workItem from="1456349219401" duration="172000" />
       <workItem from="1456349402510" duration="22000" />
-      <workItem from="1456349435209" duration="44222000" />
+      <workItem from="1456349435209" duration="47724000" />
     </task>
     <task id="LOCAL-00001" summary="added x86 nd4j backend, fixed test">
       <created>1456350052448</created>
@@ -1340,30 +1343,27 @@
       <option name="project" value="LOCAL" />
       <updated>1457463342437</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added backprop training test (multi example)">
+      <created>1457477210417</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1457477210417</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="kotlin_in_learning4k - 2016.03.08 at 23h 36m 00s.xml">
-      <configuration name="kotlin in learning4k" configurationId="JUnit" />
+    <history-entry file="BackpropagationTests - 2016.03.09 at 00h 23m 12s.xml">
+      <configuration name="BackpropagationTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="kotlin_in_learning4k - 2016.03.08 at 23h 36m 22s.xml">
-      <configuration name="kotlin in learning4k" configurationId="JUnit" />
+    <history-entry file="BackpropagationTests - 2016.03.09 at 00h 23m 29s.xml">
+      <configuration name="BackpropagationTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="kotlin_in_learning4k - 2016.03.08 at 23h 37m 04s.xml">
-      <configuration name="kotlin in learning4k" configurationId="JUnit" />
+    <history-entry file="BackpropagationTests - 2016.03.09 at 00h 24m 21s.xml">
+      <configuration name="BackpropagationTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="kotlin_in_learning4k - 2016.03.08 at 23h 40m 27s.xml">
-      <configuration name="kotlin in learning4k" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="kotlin_in_learning4k - 2016.03.08 at 23h 43m 39s.xml">
-      <configuration name="kotlin in learning4k" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="kotlin_in_learning4k - 2016.03.08 at 23h 43m 51s.xml">
-      <configuration name="kotlin in learning4k" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="kotlin_in_learning4k - 2016.03.08 at 23h 45m 35s.xml">
-      <configuration name="kotlin in learning4k" configurationId="JUnit" />
+    <history-entry file="BackpropagationTests - 2016.03.09 at 00h 25m 40s.xml">
+      <configuration name="BackpropagationTests" configurationId="JUnit" />
     </history-entry>
     <history-entry file="kotlin_in_learning4k - 2016.03.08 at 23h 45m 49s.xml">
       <configuration name="kotlin in learning4k" configurationId="JUnit" />
@@ -1374,9 +1374,18 @@
     <history-entry file="kotlin_in_learning4k - 2016.03.08 at 23h 46m 12s.xml">
       <configuration name="kotlin in learning4k" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="kotlin_in_learning4k - 2016.03.09 at 00h 04m 32s.xml">
+      <configuration name="kotlin in learning4k" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="kotlin_in_learning4k - 2016.03.09 at 00h 45m 14s.xml">
+      <configuration name="kotlin in learning4k" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="kotlin_in_learning4k - 2016.03.09 at 00h 47m 25s.xml">
+      <configuration name="kotlin in learning4k" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55152000" />
+    <option name="totallyTimeSpent" value="58654000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1397,7 +1406,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33082706" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33082706" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15388711" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1441,11 +1450,12 @@
     <MESSAGE value="preparing backprop" />
     <MESSAGE value="added NumericalBackpropagation" />
     <MESSAGE value="added backprop training test" />
-    <option name="LAST_COMMIT_MESSAGE" value="added backprop training test" />
+    <MESSAGE value="added backprop training test (multi example)" />
+    <option name="LAST_COMMIT_MESSAGE" value="added backprop training test (multi example)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1459,37 +1469,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <marker date="1457476620067" expanded="true" signature="7:66" placeholder="..." />
-            <marker date="1457476620067" expanded="true" signature="96:4528" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="103:4526" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="142:864" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="321:858" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="392:446" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="528:688" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="739:848" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="896:1267" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1025:1261" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1151:1251" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1317:1739" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1538:1733" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1637:1723" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1776:4524" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="2012:2212" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="2245:2612" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="2654:2827" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="2754:2817" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="2911:3068" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3001:3058" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3138:3337" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3268:3327" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3420:3657" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3564:3647" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3632:3647" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3751:4006" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3913:3996" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="4035:4518" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="4128:4508" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="4342:4494" placeholder="{...}" />
+            <element signature="e#0#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1499,37 +1479,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <marker date="1457476620067" expanded="true" signature="7:66" placeholder="..." />
-            <marker date="1457476620067" expanded="true" signature="96:4528" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="103:4526" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="142:864" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="321:858" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="392:446" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="528:688" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="739:848" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="896:1267" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1025:1261" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1151:1251" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1317:1739" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1538:1733" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1637:1723" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1776:4524" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="2012:2212" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="2245:2612" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="2654:2827" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="2754:2817" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="2911:3068" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3001:3058" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3138:3337" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3268:3327" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3420:3657" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3564:3647" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3632:3647" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3751:4006" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3913:3996" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="4035:4518" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="4128:4508" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="4342:4494" placeholder="{...}" />
+            <element signature="e#0#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1539,37 +1489,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
           <folding>
-            <marker date="1457476620067" expanded="true" signature="7:66" placeholder="..." />
-            <marker date="1457476620067" expanded="true" signature="96:4528" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="103:4526" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="142:864" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="321:858" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="392:446" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="528:688" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="739:848" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="896:1267" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1025:1261" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1151:1251" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1317:1739" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1538:1733" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1637:1723" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1776:4524" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="2012:2212" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="2245:2612" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="2654:2827" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="2754:2817" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="2911:3068" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3001:3058" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3138:3337" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3268:3327" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3420:3657" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3564:3647" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3632:3647" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3751:4006" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3913:3996" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="4035:4518" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="4128:4508" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="4342:4494" placeholder="{...}" />
+            <element signature="e#0#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1579,37 +1499,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
           <folding>
-            <marker date="1457476620067" expanded="true" signature="7:66" placeholder="..." />
-            <marker date="1457476620067" expanded="true" signature="96:4528" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="103:4526" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="142:864" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="321:858" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="392:446" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="528:688" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="739:848" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="896:1267" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1025:1261" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1151:1251" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1317:1739" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1538:1733" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1637:1723" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1776:4524" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="2012:2212" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="2245:2612" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="2654:2827" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="2754:2817" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="2911:3068" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3001:3058" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3138:3337" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3268:3327" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3420:3657" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3564:3647" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3632:3647" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3751:4006" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3913:3996" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="4035:4518" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="4128:4508" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="4342:4494" placeholder="{...}" />
+            <element signature="e#0#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1712,26 +1602,6 @@
             <marker date="1456349090000" expanded="false" signature="4317:4323" placeholder=" }" />
             <marker date="1456349090000" expanded="false" signature="4363:4373" placeholder=" { " />
             <marker date="1456349090000" expanded="false" signature="4390:4396" placeholder=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/kotlin/ActivationTests.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04601227">
-          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
-          <folding>
-            <marker date="1456349063040" expanded="false" signature="7:66" placeholder="..." />
-            <marker date="1456349063040" expanded="true" signature="99:815" placeholder="{...}" />
-            <marker date="1456349063040" expanded="true" signature="106:814" placeholder="{...}" />
-            <marker date="1456349063040" expanded="true" signature="153:358" placeholder="{...}" />
-            <marker date="1456349063040" expanded="true" signature="207:352" placeholder="{...}" />
-            <marker date="1456349063040" expanded="true" signature="284:342" placeholder="{...}" />
-            <marker date="1456349063040" expanded="true" signature="400:812" placeholder="{...}" />
-            <marker date="1456349063040" expanded="true" signature="472:617" placeholder="{...}" />
-            <marker date="1456349063040" expanded="true" signature="549:607" placeholder="{...}" />
-            <marker date="1456349063040" expanded="true" signature="667:806" placeholder="{...}" />
-            <marker date="1456349063040" expanded="true" signature="738:796" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -2839,27 +2709,6 @@
             <marker date="1456349090000" expanded="true" signature="346:594" placeholder="/**...*/" />
             <marker date="1456349090000" expanded="true" signature="664:810" placeholder="{...}" />
             <marker date="1456349090000" expanded="true" signature="1125:1228" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/kotlin/Nd4jExtensionsTests.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.184375">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding>
-            <marker date="1456620799536" expanded="true" signature="7:66" placeholder="..." />
-            <marker date="1456620799536" expanded="true" signature="103:963" placeholder="{...}" />
-            <marker date="1456620799536" expanded="true" signature="109:961" placeholder="{...}" />
-            <marker date="1456620799536" expanded="true" signature="150:959" placeholder="{...}" />
-            <marker date="1456620799536" expanded="true" signature="234:579" placeholder="{...}" />
-            <marker date="1456620799536" expanded="true" signature="307:363" placeholder="{...}" />
-            <marker date="1456620799536" expanded="true" signature="406:466" placeholder="{...}" />
-            <marker date="1456620799536" expanded="true" signature="512:569" placeholder="{...}" />
-            <marker date="1456620799536" expanded="true" signature="618:953" placeholder="{...}" />
-            <marker date="1456620799536" expanded="true" signature="685:738" placeholder="{...}" />
-            <marker date="1456620799536" expanded="true" signature="778:835" placeholder="{...}" />
-            <marker date="1456620799536" expanded="true" signature="883:943" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -7564,23 +7413,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/kotlin/NetworkShapeTests.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57233703">
-          <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-          <folding>
-            <marker date="1457462013987" expanded="false" signature="7:66" placeholder="..." />
-            <marker date="1457462013987" expanded="true" signature="101:872" placeholder="{...}" />
-            <marker date="1457462013987" expanded="true" signature="108:870" placeholder="{...}" />
-            <marker date="1457462013987" expanded="true" signature="158:868" placeholder="{...}" />
-            <marker date="1457462013987" expanded="true" signature="360:515" placeholder="{...}" />
-            <marker date="1457462013987" expanded="true" signature="448:505" placeholder="{...}" />
-            <marker date="1457462013987" expanded="true" signature="558:862" placeholder="{...}" />
-            <marker date="1457462013987" expanded="true" signature="674:852" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/LabeledData.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -7836,16 +7668,6 @@
             <marker date="1456349090000" expanded="true" signature="48042:48112" placeholder="/**...*/" />
             <marker date="1456349090000" expanded="true" signature="48186:48256" placeholder="/**...*/" />
             <marker date="1456349090000" expanded="true" signature="48329:48399" placeholder="/**...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Nd4jExtensions.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5048077">
-          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-          <folding>
-            <marker date="1457475341811" expanded="false" signature="7:79" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -8361,52 +8183,205 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/kotlin/NetworkTests.kt">
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/ActivationTests.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6141479">
-          <caret line="128" column="47" selection-start-line="128" selection-start-column="47" selection-end-line="128" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.048231512">
+          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
           <folding>
-            <marker date="1457476620067" expanded="true" signature="7:66" placeholder="..." />
-            <marker date="1457476620067" expanded="true" signature="96:4528" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="103:4526" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="142:864" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="321:858" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="392:446" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="528:688" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="739:848" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="896:1267" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1025:1261" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1151:1251" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1317:1739" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1538:1733" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1637:1723" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="1776:4524" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="2012:2212" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="2245:2612" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="2654:2827" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="2754:2817" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="2911:3068" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3001:3058" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3138:3337" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3268:3327" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3420:3657" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3564:3647" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3632:3647" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3751:4006" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="3913:3996" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="4035:4518" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="4128:4508" placeholder="{...}" />
-            <marker date="1457476620067" expanded="true" signature="4342:4494" placeholder="{...}" />
+            <marker date="1456349063040" expanded="false" signature="7:66" placeholder="..." />
+            <marker date="1456349063040" expanded="true" signature="99:815" placeholder="{...}" />
+            <marker date="1456349063040" expanded="true" signature="106:814" placeholder="{...}" />
+            <marker date="1456349063040" expanded="true" signature="153:358" placeholder="{...}" />
+            <marker date="1456349063040" expanded="true" signature="207:352" placeholder="{...}" />
+            <marker date="1456349063040" expanded="true" signature="284:342" placeholder="{...}" />
+            <marker date="1456349063040" expanded="true" signature="400:812" placeholder="{...}" />
+            <marker date="1456349063040" expanded="true" signature="472:617" placeholder="{...}" />
+            <marker date="1456349063040" expanded="true" signature="549:607" placeholder="{...}" />
+            <marker date="1456349063040" expanded="true" signature="667:806" placeholder="{...}" />
+            <marker date="1456349063040" expanded="true" signature="738:796" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/NetworkShapeTests.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6028939">
+          <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+          <folding>
+            <marker date="1457462013987" expanded="true" signature="7:66" placeholder="..." />
+            <marker date="1457462013987" expanded="true" signature="101:872" placeholder="{...}" />
+            <marker date="1457462013987" expanded="true" signature="108:870" placeholder="{...}" />
+            <marker date="1457462013987" expanded="true" signature="158:868" placeholder="{...}" />
+            <marker date="1457462013987" expanded="true" signature="360:515" placeholder="{...}" />
+            <marker date="1457462013987" expanded="true" signature="448:505" placeholder="{...}" />
+            <marker date="1457462013987" expanded="true" signature="558:862" placeholder="{...}" />
+            <marker date="1457462013987" expanded="true" signature="674:852" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/Nd4jExtensionsTests.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1923077">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+          <folding>
+            <marker date="1456620799536" expanded="true" signature="7:66" placeholder="..." />
+            <marker date="1456620799536" expanded="true" signature="103:963" placeholder="{...}" />
+            <marker date="1456620799536" expanded="true" signature="109:961" placeholder="{...}" />
+            <marker date="1456620799536" expanded="true" signature="150:959" placeholder="{...}" />
+            <marker date="1456620799536" expanded="true" signature="234:579" placeholder="{...}" />
+            <marker date="1456620799536" expanded="true" signature="307:363" placeholder="{...}" />
+            <marker date="1456620799536" expanded="true" signature="406:466" placeholder="{...}" />
+            <marker date="1456620799536" expanded="true" signature="512:569" placeholder="{...}" />
+            <marker date="1456620799536" expanded="true" signature="618:953" placeholder="{...}" />
+            <marker date="1456620799536" expanded="true" signature="685:738" placeholder="{...}" />
+            <marker date="1456620799536" expanded="true" signature="778:835" placeholder="{...}" />
+            <marker date="1456620799536" expanded="true" signature="883:943" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Nd4jExtensions.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36057693">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <marker date="1457475341811" expanded="false" signature="7:79" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar!/java/util/Random.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3729097">
+          <caret line="193" column="23" selection-start-line="193" selection-start-column="23" selection-end-line="193" selection-end-column="23" />
+          <folding>
+            <marker date="1447841384533" expanded="false" signature="0:104" placeholder="/.../" />
+            <marker date="1447841384533" expanded="false" signature="133:865" placeholder="..." />
+            <marker date="1447841384533" expanded="false" signature="1772:1783" placeholder=" { " />
+            <marker date="1447841384533" expanded="false" signature="1826:1832" placeholder=" }" />
+            <marker date="1447841384533" expanded="true" signature="1875:2103" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="2134:2395" placeholder="{...}" />
+            <marker date="1447841384533" expanded="false" signature="2447:2458" placeholder=" { " />
+            <marker date="1447841384533" expanded="false" signature="2506:2512" placeholder=" }" />
+            <marker date="1447841384533" expanded="true" signature="2562:2658" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="2693:2978" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="3019:3297" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="3353:3987" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="4039:4513" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="4577:4860" placeholder="{...}" />
+            <marker date="1447841384533" expanded="false" signature="4886:4897" placeholder=" { " />
+            <marker date="1447841384533" expanded="false" signature="4918:4924" placeholder=" }" />
+            <marker date="1447841384533" expanded="true" signature="4959:5462" placeholder="{...}" />
+            <marker date="1447841384533" expanded="false" signature="5490:5501" placeholder=" { " />
+            <marker date="1447841384533" expanded="false" signature="5558:5564" placeholder=" }" />
+            <marker date="1447841384533" expanded="false" signature="5598:5609" placeholder=" { " />
+            <marker date="1447841384533" expanded="false" signature="5634:5640" placeholder=" }" />
+            <marker date="1447841384533" expanded="true" signature="5670:5681" placeholder=" { " />
+            <marker date="1447841384533" expanded="true" signature="5724:5730" placeholder=" }" />
+            <marker date="1447841384533" expanded="true" signature="5763:5872" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="5920:6652" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="6691:6942" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="6972:7107" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="7166:7533" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="7581:7856" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="7897:8161" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="8193:8341" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="8404:8773" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="8825:9102" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="9147:9420" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="9456:9613" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="9684:10057" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="10117:10398" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="10495:10898" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="10986:11236" placeholder="{...}" />
+            <marker date="1447841384533" expanded="false" signature="11275:11286" placeholder=" { " />
+            <marker date="1447841384533" expanded="false" signature="11351:11357" placeholder=" }" />
+            <marker date="1447841384533" expanded="true" signature="11370:11816" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="11886:13920" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="12112:12277" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="12337:12567" placeholder="{...}" />
+            <marker date="1447841384533" expanded="false" signature="12603:12618" placeholder=" { " />
+            <marker date="1447841384533" expanded="false" signature="12649:12659" placeholder=" }" />
+            <marker date="1447841384533" expanded="false" signature="12697:12712" placeholder=" { " />
+            <marker date="1447841384533" expanded="false" signature="12725:12735" placeholder=" }" />
+            <marker date="1447841384533" expanded="true" signature="12792:13274" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="13334:13914" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="13986:15994" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="14202:14367" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="14425:14653" placeholder="{...}" />
+            <marker date="1447841384533" expanded="false" signature="14689:14704" placeholder=" { " />
+            <marker date="1447841384533" expanded="false" signature="14735:14745" placeholder=" }" />
+            <marker date="1447841384533" expanded="false" signature="14783:14798" placeholder=" { " />
+            <marker date="1447841384533" expanded="false" signature="14811:14821" placeholder=" }" />
+            <marker date="1447841384533" expanded="true" signature="14876:15356" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="15414:15988" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="16058:18053" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="16269:16434" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="16491:16718" placeholder="{...}" />
+            <marker date="1447841384533" expanded="false" signature="16754:16769" placeholder=" { " />
+            <marker date="1447841384533" expanded="false" signature="16800:16810" placeholder=" }" />
+            <marker date="1447841384533" expanded="false" signature="16848:16863" placeholder=" { " />
+            <marker date="1447841384533" expanded="false" signature="16876:16886" placeholder=" }" />
+            <marker date="1447841384533" expanded="true" signature="16940:17419" placeholder="{...}" />
+            <marker date="1447841384533" expanded="true" signature="17476:18047" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/Network.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.670418">
-          <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="74" column="65" selection-start-line="74" selection-start-column="65" selection-end-line="74" selection-end-column="65" />
           <folding>
-            <element signature="e#0#124#0" expanded="true" />
+            <marker date="1457479385589" expanded="true" signature="7:124" placeholder="..." />
+            <marker date="1457479385589" expanded="true" signature="227:967" placeholder="{...}" />
+            <marker date="1457479385589" expanded="true" signature="995:1427" placeholder="{...}" />
+            <marker date="1457479385589" expanded="true" signature="1538:2533" placeholder="{...}" />
+            <marker date="1457479385589" expanded="true" signature="1631:2531" placeholder="{...}" />
+            <marker date="1457479385589" expanded="true" signature="1721:2525" placeholder="{...}" />
+            <marker date="1457479385589" expanded="true" signature="1891:2515" placeholder="{...}" />
+            <marker date="1457479385589" expanded="true" signature="2030:2155" placeholder="{...}" />
+            <marker date="1457479385589" expanded="true" signature="2214:2401" placeholder="{...}" />
+            <marker date="1457479385589" expanded="true" signature="2614:2939" placeholder="{...}" />
+            <marker date="1457479385589" expanded="true" signature="2707:2937" placeholder="{...}" />
+            <marker date="1457479385589" expanded="true" signature="3010:4243" placeholder="{...}" />
+            <marker date="1457479385589" expanded="true" signature="3021:3146" placeholder="{...}" />
+            <marker date="1457479385589" expanded="true" signature="3656:3963" placeholder="{...}" />
+            <marker date="1457479385589" expanded="true" signature="4073:4124" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/BackpropagationTests.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.94051445">
+          <caret line="51" column="1" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+          <folding>
+            <marker date="1457480681220" expanded="true" signature="7:85" placeholder="..." />
+            <marker date="1457480681220" expanded="true" signature="123:2061" placeholder="{...}" />
+            <marker date="1457480681220" expanded="true" signature="130:2058" placeholder="{...}" />
+            <marker date="1457480681220" expanded="true" signature="162:2056" placeholder="{...}" />
+            <marker date="1457480681220" expanded="true" signature="318:515" placeholder="{...}" />
+            <marker date="1457480681220" expanded="true" signature="771:1006" placeholder="{...}" />
+            <marker date="1457480681220" expanded="true" signature="913:996" placeholder="{...}" />
+            <marker date="1457480681220" expanded="true" signature="1100:1353" placeholder="{...}" />
+            <marker date="1457480681220" expanded="true" signature="1260:1343" placeholder="{...}" />
+            <marker date="1457480681220" expanded="true" signature="1382:2050" placeholder="{...}" />
+            <marker date="1457480681220" expanded="true" signature="1475:2040" placeholder="{...}" />
+            <marker date="1457480681220" expanded="true" signature="1675:2026" placeholder="{...}" />
+            <marker date="1457480681220" expanded="true" signature="1833:2007" placeholder="{...}" />
+            <marker date="1457480681220" expanded="true" signature="1886:1985" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/NetworkTests.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62700963">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
