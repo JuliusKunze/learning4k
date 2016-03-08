@@ -9,23 +9,26 @@ class Network private constructor(val shape: NetworkShape, val weightsMatrices: 
 
     operator fun invoke(input: List<Float>) = weightsMatrices.fold(input, { data, weight -> weight(data) })
 
-    fun descended(gradientMatrices: List<INDArray>, learningRate: Float = 1e-2f) =
-            Network(shape, weightsMatrices.zip(gradientMatrices) { weightMatrix, gradientMatrix -> WeightsMatrix(weightMatrix.shape, weightMatrix.elements + gradientMatrix * learningRate) })
+    fun descended(gradientMatrices: List<INDArray>, learningRate: Float) =
+            Network(shape, weightsMatrices.zip(gradientMatrices) { weightMatrix, gradientMatrix -> WeightsMatrix(weightMatrix.shape, weightMatrix.elements - gradientMatrix * learningRate) })
 
     fun copy() = Network(shape, weightsMatrices.map { it.copy() })
+
+    override fun toString() = weightsMatrices.map { it.toString() }.joinToString()
 }
 
 interface Backpropagation {
-    fun gradients(network: Network, example: LabeledData): List<INDArray>
+    fun gradientsMatrices(network: Network, example: LabeledData): List<INDArray>
 
-    fun trained(network: Network, example: LabeledData, learningRate: Float): Network {
-        val gradientMatrices = gradients(network, example)
-        return network.descended(gradientMatrices, learningRate)
-    }
+    fun trained(network: Network, example: LabeledData, learningRate: Float) =
+            network.descended(gradientsMatrices(network, example), learningRate)
+
+    fun trained(network: Network, examples: List<LabeledData>, learningRate: Float) =
+            examples.fold(network) { network, example -> trained(network, example, learningRate) }
 }
 
 class NumericalBackpropagation(val distance: Float = 1e-5f, val cost: Cost = SquaredError) : Backpropagation {
-    override fun gradients(network: Network, example: LabeledData): List<INDArray> {
+    override fun gradientsMatrices(network: Network, example: LabeledData): List<INDArray> {
         val modified = network.copy()
         return network.weightsMatrices.mapIndexed { weightsMatrixIndex, weightsMatrix ->
             matrix(rowCount = weightsMatrix.shape.matrixRowCount, columnCount = weightsMatrix.shape.matrixColumnCount)
@@ -50,7 +53,7 @@ class NumericalBackpropagation(val distance: Float = 1e-5f, val cost: Cost = Squ
 }
 
 class StandardBackpropagation(val cost: Cost = SquaredError) : Backpropagation {
-    override fun gradients(network: Network, example: LabeledData): List<INDArray> {
+    override fun gradientsMatrices(network: Network, example: LabeledData): List<INDArray> {
         val output = network.invoke(example.input)
         val prediction = example.output
         val deltaOutput = output.zip(prediction) { output, prediction -> output - prediction }
@@ -89,4 +92,6 @@ class WeightsMatrix(val shape: WeightsShape, val elements: INDArray) {
     }
 
     fun copy() = WeightsMatrix(shape, elements = elements.dup())
+
+    override fun toString() = elements.toString()
 }

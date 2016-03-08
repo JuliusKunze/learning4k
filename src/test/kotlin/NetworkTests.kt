@@ -55,18 +55,44 @@ class NetworkTests : Spek() { init {
     }
 
     given("a three layer network") {
-        val network = threeLayerNetworkWith1InputAnd1Output()
+        val x = 1.5f
+        val h1 = 0.5f + x * 3.0f
+        val h2 = 1.0f + h1 * 5.0f
+        val expectedY = 2.0f + h2 * 3.0f
+        val example = LabeledData(listOf(x), listOf(expectedY))
+
+        fun untrainedNetwork(): Network {
+            return Network(
+                    Layer(1, Identity),
+                    Layer(1, Relu),
+                    Layer(1, Relu),
+                    Layer(1, Relu)
+            )
+        }
+
+        fun network(): Network {
+            val network = untrainedNetwork()
+
+            val weights = listOf(
+                    listOf(0.5f, 3.0f),
+                    listOf(1.0f, 5.0f),
+                    listOf(2.0f, 3.0f)
+            )
+
+            weights.withIndex().forEach { network.weightsMatrices[it.index].elements.putRow(0, it.value.toRow()) }
+            return network
+        }
 
         on("invoking it on an example") {
-            val y = network(listOf(x))
+            val y = network()(example.input)
 
-            it("should return a the expected result") {
-                assertEquals(expectedY, y.single())
+            it("should return the expected result") {
+                assertEquals(example.output, y)
             }
         }
 
         on("getting the squared error for the exact input/output of the network") {
-            val error = SquaredError(exampleWithoutError, network)
+            val error = SquaredError(example, network())
 
             it("should be 0") {
                 assertEquals(error, 0.0f)
@@ -74,7 +100,7 @@ class NetworkTests : Spek() { init {
         }
 
         on("getting the squared error for the netowork output + 2") {
-            val error = SquaredError(LabeledData(listOf(x), listOf(expectedY + 2)), network)
+            val error = SquaredError(LabeledData(listOf(x), listOf(expectedY + 2)), network())
 
             it("should be 4/2") {
                 assertEquals(error, 4f / 2)
@@ -82,37 +108,32 @@ class NetworkTests : Spek() { init {
         }
 
         on("training it with the outcome value using numerical backpropagation") {
-            val backpropagation = NumericalBackpropagation()
-
-            val newNetwork = backpropagation.trained(network, exampleWithoutError, learningRate = 0.1f)
+            val newNetwork = NumericalBackpropagation().trained(network(), example, learningRate = 0.1f)
 
             it("should not change") {
-                assertEquals(newNetwork(listOf(x)), listOf(expectedY))
+                assertEquals(0f, SquaredError(example, newNetwork))
+            }
+        }
+
+        on("training it with the outcome value using numerical backpropagation many times") {
+            val newNetwork = NumericalBackpropagation().trained(network(), (1..1000).map { example }, learningRate = 0.1f)
+
+            it("should not change") {
+                assertEquals(0f, SquaredError(example, newNetwork))
+            }
+        }
+
+
+        for (i in 0..100) {
+            on("training a randomly initialized network with the same example many times") {
+                val newNetwork = NumericalBackpropagation().trained(untrainedNetwork(), (1..100).map { example }, learningRate = 0.1f)
+
+                it("it should have no error for the example + $newNetwork") {
+                    val error = SquaredError(example, newNetwork)
+                    assert(error < 1e-2f) { "$error $newNetwork" }
+                }
             }
         }
     }
 }
-    val x = 1.5f
-    val h1 = 0.5f + x * 3.0f
-    val h2 = 1.0f + h1 * 5.0f
-    val expectedY = 2.0f + h2 * 3.0f
-    val exampleWithoutError = LabeledData(listOf(x), listOf(expectedY))
-
-    fun threeLayerNetworkWith1InputAnd1Output(): Network {
-        val network = Network(
-                Layer(1, Identity),
-                Layer(1, Relu),
-                Layer(1, Relu),
-                Layer(1, Relu)
-        )
-
-        val weights = listOf(
-                listOf(0.5f, 3.0f),
-                listOf(1.0f, 5.0f),
-                listOf(2.0f, 3.0f)
-        )
-
-        weights.withIndex().forEach { network.weightsMatrices[it.index].elements.putRow(0, it.value.toRow()) }
-        return network
-    }
 }

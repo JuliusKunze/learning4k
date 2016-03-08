@@ -7,7 +7,7 @@ fun List<Float>.toColumn() = Nd4j.create(this.toFloatArray(), intArrayOf(size, 1
 operator fun INDArray.times(other: INDArray) = mmul(other)
 operator fun INDArray.times(other: Float) = mul(other)
 operator fun INDArray.plus(other: INDArray) = add(other)
-
+operator fun INDArray.minus(other: INDArray) = sub(other)
 fun INDArray.rowRange() = (0..rows() - 1)
 fun INDArray.columnRange() = (0..columns() - 1)
 
