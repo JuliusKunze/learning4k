@@ -16,3 +16,5 @@ fun INDArray.flattenToList() = rowRange().flatMap { row -> columnRange().map { c
 fun INDArray.toList() = if (isColumnVector || isRowVector)
     flattenToList() else
     throw IllegalStateException("Row or column vector expected.")
+
+fun matrix(rowCount: Int, columnCount: Int, element: (Int, Int) -> Float) = Nd4j.create(Array(rowCount, { row -> FloatArray(columnCount, { column -> element(row, column) }) }))

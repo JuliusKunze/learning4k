@@ -25,10 +25,12 @@
     <option name="FILTER_BY_CURRENT_PROJECT" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66d22208-b781-49a2-a4a1-155e9901d93c" name="Default" comment="">
+    <list default="true" id="66d22208-b781-49a2-a4a1-155e9901d93c" name="Default" comment="added Network feed forward">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/kotlin/Cost.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/kotlin/Nd4jExtensions.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/Nd4jExtensions.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/kotlin/Network.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/Network.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/kotlin/NetworkArchitecture.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/NetworkArchitecture.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/kotlin/NetworkTests.kt" afterPath="$PROJECT_DIR$/src/test/kotlin/NetworkTests.kt" />
     </list>
     <ignored path="learning4k.iws" />
@@ -96,13 +98,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="NetworkTests.kt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/kotlin/NetworkTests.kt">
+      <file leaf-file-name="Network.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/Network.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.9095092">
-              <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.6200318">
+              <caret line="26" column="61" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
               <folding>
-                <element signature="e#0#66#0" expanded="true" />
+                <element signature="e#0#124#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -537,14 +539,16 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/Main.kt" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/kotlin/LabeledData.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/NetworkArchitecture.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/Util.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Activation.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/Nd4jExtensionsTests.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/NetworkArchitectureTests.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/Network.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/Nd4jExtensions.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/Error.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/Cost.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/NetworkTests.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/Nd4jExtensions.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/NetworkArchitecture.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/Network.kt" />
       </list>
     </option>
   </component>
@@ -563,7 +567,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="31" />
     <option name="width" value="1920" />
-    <option name="height" value="1049" />
+    <option name="height" value="1026" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -599,10 +603,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="learning4k" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -729,7 +729,7 @@
       <recent name="C:\Projects\learning4k\src\test\kotlin" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.NetworkTests">
+  <component name="RunManager" selected="JUnit.kotlin in learning4k">
     <configuration default="false" name="kotlin in learning4k" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="learning4k" />
@@ -1267,8 +1267,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.NetworkTests" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.kotlin in learning4k" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.kotlin in learning4k" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.NetworkTests" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.Nd4jExtensionsTests" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.NetworkArchitectureTests" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.ActivationTests" />
@@ -1291,7 +1291,7 @@
       <workItem from="1456349067223" duration="138000" />
       <workItem from="1456349219401" duration="172000" />
       <workItem from="1456349402510" duration="22000" />
-      <workItem from="1456349435209" duration="21982000" />
+      <workItem from="1456349435209" duration="28934000" />
     </task>
     <task id="LOCAL-00001" summary="added x86 nd4j backend, fixed test">
       <created>1456350052448</created>
@@ -1317,13 +1317,16 @@
       <option name="project" value="LOCAL" />
       <updated>1456652811990</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added Network feed forward">
+      <created>1456678218057</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1456678218057</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="NetworkTests - 2016.02.28 at 02h 11m 32s.xml">
-      <configuration name="NetworkTests" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="NetworkTests - 2016.02.28 at 17h 47m 17s.xml">
       <configuration name="NetworkTests" configurationId="JUnit" />
     </history-entry>
@@ -1332,15 +1335,6 @@
     </history-entry>
     <history-entry file="NetworkTests - 2016.02.28 at 17h 49m 31s.xml">
       <configuration name="NetworkTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="kotlin_in_learning4k - 2016.02.28 at 02h 07m 32s.xml">
-      <configuration name="kotlin in learning4k" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="kotlin_in_learning4k - 2016.02.28 at 10h 25m 40s.xml">
-      <configuration name="kotlin in learning4k" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="kotlin_in_learning4k - 2016.02.28 at 10h 29m 31s.xml">
-      <configuration name="kotlin in learning4k" configurationId="JUnit" />
     </history-entry>
     <history-entry file="kotlin_in_learning4k - 2016.02.28 at 10h 30m 47s.xml">
       <configuration name="kotlin in learning4k" configurationId="JUnit" />
@@ -1351,9 +1345,21 @@
     <history-entry file="kotlin_in_learning4k - 2016.02.28 at 10h 46m 12s.xml">
       <configuration name="kotlin in learning4k" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="kotlin_in_learning4k - 2016.02.28 at 18h 12m 59s.xml">
+      <configuration name="kotlin in learning4k" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="kotlin_in_learning4k - 2016.02.28 at 18h 15m 28s.xml">
+      <configuration name="kotlin in learning4k" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="kotlin_in_learning4k - 2016.02.28 at 18h 15m 53s.xml">
+      <configuration name="kotlin in learning4k" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="kotlin_in_learning4k - 2016.03.08 at 16h 52m 06s.xml">
+      <configuration name="kotlin in learning4k" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32912000" />
+    <option name="totallyTimeSpent" value="39864000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1365,22 +1371,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="31" width="1920" height="1049" extended-state="6" />
+    <frame x="0" y="31" width="1920" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32809225" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32760474" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31551364" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32330826" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27635783" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15388711" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914045" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32867885" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21884984" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1414,7 +1420,8 @@
     <MESSAGE value="added per layer feed forward" />
     <MESSAGE value="added precise weights test" />
     <MESSAGE value="refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
+    <MESSAGE value="added Network feed forward" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Network feed forward" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1432,7 +1439,27 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <element signature="e#0#66#0" expanded="true" />
+            <marker date="1457452236762" expanded="true" signature="7:66" placeholder="..." />
+            <marker date="1457452236762" expanded="true" signature="96:3240" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="103:3238" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="142:863" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="321:857" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="391:445" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="527:687" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="738:847" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="895:1266" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1024:1260" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1150:1250" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1316:1738" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1537:1732" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1636:1722" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1775:3236" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="2367:2534" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="2457:2524" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="2618:2885" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="2818:2875" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="2955:3230" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="3161:3220" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1442,7 +1469,27 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <element signature="e#0#66#0" expanded="true" />
+            <marker date="1457452236762" expanded="true" signature="7:66" placeholder="..." />
+            <marker date="1457452236762" expanded="true" signature="96:3240" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="103:3238" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="142:863" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="321:857" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="391:445" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="527:687" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="738:847" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="895:1266" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1024:1260" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1150:1250" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1316:1738" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1537:1732" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1636:1722" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1775:3236" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="2367:2534" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="2457:2524" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="2618:2885" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="2818:2875" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="2955:3230" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="3161:3220" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1452,7 +1499,27 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
           <folding>
-            <element signature="e#0#66#0" expanded="true" />
+            <marker date="1457452236762" expanded="true" signature="7:66" placeholder="..." />
+            <marker date="1457452236762" expanded="true" signature="96:3240" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="103:3238" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="142:863" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="321:857" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="391:445" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="527:687" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="738:847" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="895:1266" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1024:1260" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1150:1250" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1316:1738" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1537:1732" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1636:1722" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1775:3236" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="2367:2534" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="2457:2524" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="2618:2885" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="2818:2875" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="2955:3230" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="3161:3220" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1462,7 +1529,27 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
           <folding>
-            <element signature="e#0#66#0" expanded="true" />
+            <marker date="1457452236762" expanded="true" signature="7:66" placeholder="..." />
+            <marker date="1457452236762" expanded="true" signature="96:3240" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="103:3238" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="142:863" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="321:857" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="391:445" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="527:687" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="738:847" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="895:1266" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1024:1260" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1150:1250" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1316:1738" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1537:1732" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1636:1722" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1775:3236" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="2367:2534" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="2457:2524" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="2618:2885" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="2818:2875" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="2955:3230" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="3161:3220" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1899,18 +1986,6 @@
             <marker date="1456349090000" expanded="true" signature="42084:42218" placeholder="/**...*/" />
             <marker date="1456349090000" expanded="true" signature="42311:42429" placeholder="/**...*/" />
             <marker date="1456349090000" expanded="true" signature="42510:42636" placeholder="/**...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Activation.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
-          <folding>
-            <marker date="1456619575058" expanded="true" signature="21:69" placeholder="{...}" />
-            <marker date="1456619575058" expanded="true" signature="100:158" placeholder="{...}" />
-            <marker date="1456619575058" expanded="true" signature="185:259" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -3413,17 +3488,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/NetworkArchitecture.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3984375">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding>
-            <marker date="1456618585934" expanded="true" signature="306:752" placeholder="{...}" />
-            <marker date="1456618585934" expanded="true" signature="468:686" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/kotlin/Nd4jExtensionsTests.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.184375">
@@ -3441,46 +3505,6 @@
             <marker date="1456620799536" expanded="true" signature="685:738" placeholder="{...}" />
             <marker date="1456620799536" expanded="true" signature="778:835" placeholder="{...}" />
             <marker date="1456620799536" expanded="true" signature="883:943" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/kotlin/NetworkArchitectureTests.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6796875">
-          <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
-          <folding>
-            <marker date="1456622612051" expanded="false" signature="7:66" placeholder="..." />
-            <marker date="1456622612051" expanded="true" signature="108:886" placeholder="{...}" />
-            <marker date="1456622612051" expanded="true" signature="115:884" placeholder="{...}" />
-            <marker date="1456622612051" expanded="true" signature="165:882" placeholder="{...}" />
-            <marker date="1456622612051" expanded="true" signature="374:529" placeholder="{...}" />
-            <marker date="1456622612051" expanded="true" signature="462:519" placeholder="{...}" />
-            <marker date="1456622612051" expanded="true" signature="572:876" placeholder="{...}" />
-            <marker date="1456622612051" expanded="true" signature="688:866" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/LabeledData.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="11" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Network.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.342723">
-          <caret line="18" column="110" selection-start-line="18" selection-start-column="110" selection-end-line="18" selection-end-column="110" />
-          <folding>
-            <marker date="1456678031079" expanded="true" signature="7:124" placeholder="..." />
-            <marker date="1456678031079" expanded="true" signature="172:440" placeholder="{...}" />
-            <marker date="1456678031079" expanded="true" signature="505:1614" placeholder="{...}" />
-            <marker date="1456678031079" expanded="true" signature="516:633" placeholder="{...}" />
-            <marker date="1456678031079" expanded="true" signature="1138:1445" placeholder="{...}" />
-            <marker date="1456678031079" expanded="true" signature="1555:1612" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -6623,16 +6647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Nd4jExtensions.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09389672">
-          <caret line="4" column="82" selection-start-line="4" selection-start-column="82" selection-end-line="4" selection-end-column="82" />
-          <folding>
-            <marker date="1456678031081" expanded="true" signature="7:79" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.0.0/3a8a73d14b5fdda2425b40b440bb0ce71cb627fc/kotlin-stdlib-1.0.0-sources.jar!/generated/_Collections.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
@@ -7358,10 +7372,110 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/kotlin/NetworkTests.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.9095092">
-          <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+        <state vertical-scroll-proportion="1.0690184">
+          <caret line="98" column="15" selection-start-line="98" selection-start-column="15" selection-end-line="98" selection-end-column="15" />
           <folding>
-            <element signature="e#0#66#0" expanded="true" />
+            <marker date="1457452236762" expanded="true" signature="7:66" placeholder="..." />
+            <marker date="1457452236762" expanded="true" signature="96:3240" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="103:3238" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="142:863" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="321:857" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="391:445" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="527:687" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="738:847" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="895:1266" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1024:1260" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1150:1250" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1316:1738" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1537:1732" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1636:1722" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="1775:3236" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="2367:2534" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="2457:2524" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="2618:2885" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="2818:2875" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="2955:3230" placeholder="{...}" />
+            <marker date="1457452236762" expanded="true" signature="3161:3220" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Activation.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+          <folding>
+            <marker date="1456619575058" expanded="true" signature="21:69" placeholder="{...}" />
+            <marker date="1456619575058" expanded="true" signature="100:158" placeholder="{...}" />
+            <marker date="1456619575058" expanded="true" signature="185:259" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/LabeledData.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Cost.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23847377">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding>
+            <marker date="1456679576508" expanded="true" signature="15:295" placeholder="{...}" />
+            <marker date="1456679576508" expanded="true" signature="324:429" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/NetworkArchitectureTests.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5769231">
+          <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+          <folding>
+            <marker date="1456622612051" expanded="false" signature="7:66" placeholder="..." />
+            <marker date="1456622612051" expanded="true" signature="108:886" placeholder="{...}" />
+            <marker date="1456622612051" expanded="true" signature="115:884" placeholder="{...}" />
+            <marker date="1456622612051" expanded="true" signature="165:882" placeholder="{...}" />
+            <marker date="1456622612051" expanded="true" signature="374:529" placeholder="{...}" />
+            <marker date="1456622612051" expanded="true" signature="462:519" placeholder="{...}" />
+            <marker date="1456622612051" expanded="true" signature="572:876" placeholder="{...}" />
+            <marker date="1456622612051" expanded="true" signature="688:866" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/NetworkArchitecture.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.048076924">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+          <folding>
+            <marker date="1456952698521" expanded="true" signature="154:258" placeholder="{...}" />
+            <marker date="1456952698521" expanded="true" signature="411:857" placeholder="{...}" />
+            <marker date="1456952698521" expanded="true" signature="573:791" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Nd4jExtensions.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30645162">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding>
+            <marker date="1456952698524" expanded="true" signature="7:79" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Network.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6200318">
+          <caret line="26" column="61" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#124#0" expanded="true" />
           </folding>
         </state>
       </provider>

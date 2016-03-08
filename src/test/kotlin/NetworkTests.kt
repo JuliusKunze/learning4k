@@ -17,7 +17,7 @@ class NetworkTests : Spek() { init {
             }
 
             it("each should have only non-negative values below the max value") {
-                assert(m.all { matrix -> matrix.elements.flattenToList().all { 0 <= it && it < Weights.defaultRandomInitializationMax } })
+                assert(m.all { matrix -> matrix.elements.flattenToList().all { 0 <= it && it < WeightsMatrix.defaultRandomInitializationMax } })
             }
 
             it("none should only have 0 values") {
@@ -27,7 +27,7 @@ class NetworkTests : Spek() { init {
     }
 
     given("a weights matrix") {
-        val weights = Weights(WeightsShape(inputSize = 3, outputSize = 2, activation = Relu))
+        val weights = WeightsMatrix(WeightsShape(inputSize = 3, outputSize = 2, activation = Relu))
 
         on("invoking it") {
             val x = listOf(5f, 3f, 1f)
@@ -40,15 +40,15 @@ class NetworkTests : Spek() { init {
         }
     }
 
-    given("a tiny weights matrix") {
-        val weights = Weights(WeightsShape(inputSize = 1, outputSize = 3, activation = Relu), elements = listOf(
+    given("a weights matrix with just 1 input") {
+        val weights = WeightsMatrix(WeightsShape(inputSize = 1, outputSize = 3, activation = Relu), elements = listOf(
                 listOf(1f, 0f, 4f),
                 listOf(0f, 3f, 4f)))
 
         on("invoking it") {
             val y = weights(listOf(1.5f))
 
-            it("should return three neurons activations") {
+            it("should return 3 neurons activations") {
                 assertEquals(y, listOf(1f, 3f * 1.5f, 4f + 4f * 1.5f))
             }
         }
@@ -70,15 +70,40 @@ class NetworkTests : Spek() { init {
 
         weights.withIndex().forEach { network.weightMatrices[it.index].elements.putRow(0, it.value.toRow()) }
 
+
+        val x = 1.5f
+
+        val h1 = 0.5f + x * 3.0f
+        val h2 = 1.0f + h1 * 5.0f
+        val expectedY = 2.0f + h2 * 3.0f
+
         on("invoking it") {
-            val x = 1.5f
             val y = network(listOf(x))
 
             it("should return a single result") {
-                val h1 = 0.5f + x * 3.0f
-                val h2 = 1.0f + h1 * 5.0f
-                val result = 2.0f + h2 * 3.0f
-                assertEquals(result, y.single())
+                assertEquals(expectedY, y.single())
+            }
+        }
+
+        on("getting the squared error for the exact input/output of the network") {
+            val error = SquaredError(
+                    labeledData = LabeledData(listOf(x), listOf(expectedY)),
+                    network = network
+            )
+
+            it("should be 0") {
+                assertEquals(error, 0.0f)
+            }
+        }
+
+        on("getting the squared error for the netowork output + 2") {
+            val error = SquaredError(
+                    labeledData = LabeledData(listOf(x), listOf(expectedY + 2)),
+                    network = network
+            )
+
+            it("should be 4/2") {
+                assertEquals(error, 4f / 2)
             }
         }
     }

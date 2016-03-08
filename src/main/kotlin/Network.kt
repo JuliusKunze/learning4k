@@ -5,15 +5,26 @@ import org.nd4j.linalg.factory.Nd4j
 class Network(val shape: NetworkArchitecture) {
     constructor(vararg layers: Layer) : this(shape = NetworkArchitecture(layers.toList()))
 
-    val weightMatrices = shape.weightsShapes.map { Weights(it) }
+    val weightMatrices = shape.weightsShapes.map { WeightsMatrix(it) }
 
     operator fun invoke(input: List<Float>) = weightMatrices.fold(input, { data, weight -> weight(data) })
+
+    fun train(example: LabeledData) {
+        val gradientMatrices = backpropagate(weightMatrices, example)
+        //val newWeightMatrices = decent(weightMatrices, gradientMatrices, learningRate = )
+    }
+
+    private fun backpropagate(weightMatrices: List<WeightsMatrix>, example: LabeledData): List<INDArray> {
+        /*val error =
+        val elements = matrix()*/
+        return null!!
+    }
 }
 
-class Weights(val shape: WeightsShape, val elements: INDArray) {
+class WeightsMatrix(val shape: WeightsShape, val elements: INDArray) {
     init {
-        assert(shape.outputSize == elements.columns())
-        assert(shape.inputSize + 1 == elements.rows())
+        assert(shape.matrixRowCount == elements.rows())
+        assert(shape.matrixColumnCount == elements.columns())
     }
 
     constructor(shape: WeightsShape, elements: List<List<Float>>) : this(shape, Nd4j.create(elements.map { it.toFloatArray() }.toTypedArray()))
@@ -22,10 +33,10 @@ class Weights(val shape: WeightsShape, val elements: INDArray) {
             shape: WeightsShape,
             randomInitializationMax: Double = defaultRandomInitializationMax,
             seed: Long = System.currentTimeMillis()) :
-    this(shape, Nd4j.rand(shape.inputSize + 1, shape.outputSize, 0.0, randomInitializationMax, DefaultRandom(seed)))
+    this(shape, Nd4j.rand(shape.matrixRowCount, shape.matrixColumnCount, 0.0, randomInitializationMax, DefaultRandom(seed)))
 
     operator fun invoke(input: List<Float>): List<Float> {
-        if (input.count() != shape.inputSize)
+        if (input.count()  != shape.inputSize)
             throw IllegalArgumentException("${shape.inputSize} input values expected, found ${input.count()}.")
 
         val x = input.toColumnWithBiasUnit()
