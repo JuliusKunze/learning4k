@@ -34,6 +34,24 @@ class BackpropagationTests : Spek() { init {
 
         for (i in 0..100) {
             on("training a randomly initialized network with the same example many times") {
+                var errors = ArrayList<Float>()
+                var n = randomNetwork()
+                for (iteration in 1..100) {
+                    n = NumericalBackpropagation().trained(n, example, learningRate = 0.1f)
+                    errors.add(SquaredError(example, n))
+                }
+
+                it("should have only decreasing errors") {
+                    for ((index, error) in errors.withIndex().drop(1)) {
+                        val diffFromPrevious = errors[index - 1] - error
+                        assert(diffFromPrevious > -1e-2f) { "$diffFromPrevious" }
+                    }
+                }
+            }
+        }
+
+        for (i in 0..100) {
+            on("training a randomly initialized network with the same example many times") {
                 val newNetwork = NumericalBackpropagation().trained(randomNetwork(), (1..100).map { example }, learningRate = 0.1f)
 
                 it("it should have gradient matrices all zero") {

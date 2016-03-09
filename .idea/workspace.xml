@@ -97,8 +97,8 @@
       <file leaf-file-name="BackpropagationTests.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/kotlin/BackpropagationTests.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44533762">
-              <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.54404145">
+              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding>
                 <element signature="e#0#85#0" expanded="true" />
               </folding>
@@ -729,7 +729,7 @@
       <recent name="C:\Projects\learning4k\src\test\kotlin" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.kotlin in learning4k">
+  <component name="RunManager" selected="JUnit.BackpropagationTests">
     <configuration default="false" name="kotlin in learning4k" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="learning4k" />
@@ -1267,8 +1267,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.kotlin in learning4k" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.BackpropagationTests" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.BackpropagationTests" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.kotlin in learning4k" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.NetworkTests" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.Nd4jExtensionsTests" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.NetworkArchitectureTests" />
@@ -1291,7 +1291,7 @@
       <workItem from="1456349067223" duration="138000" />
       <workItem from="1456349219401" duration="172000" />
       <workItem from="1456349402510" duration="22000" />
-      <workItem from="1456349435209" duration="48065000" />
+      <workItem from="1456349435209" duration="49848000" />
     </task>
     <task id="LOCAL-00001" summary="added x86 nd4j backend, fixed test">
       <created>1456350052448</created>
@@ -1353,43 +1353,49 @@
       <option name="project" value="LOCAL" />
       <updated>1457480898477</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="made tests faster">
+      <created>1457481227211</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1457481227211</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="kotlin_in_learning4k - 2016.03.09 at 00h 47m 25s.xml">
-      <configuration name="kotlin in learning4k" configurationId="JUnit" />
+    <history-entry file="BackpropagationTests - 2016.03.09 at 01h 14m 26s.xml">
+      <configuration name="BackpropagationTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="kotlin_in_learning4k - 2016.03.09 at 00h 48m 55s.xml">
-      <configuration name="kotlin in learning4k" configurationId="JUnit" />
+    <history-entry file="BackpropagationTests - 2016.03.09 at 01h 17m 48s.xml">
+      <configuration name="BackpropagationTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="kotlin_in_learning4k - 2016.03.09 at 00h 50m 31s.xml">
-      <configuration name="kotlin in learning4k" configurationId="JUnit" />
+    <history-entry file="BackpropagationTests - 2016.03.09 at 01h 18m 56s.xml">
+      <configuration name="BackpropagationTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="kotlin_in_learning4k - 2016.03.09 at 00h 50m 48s.xml">
-      <configuration name="kotlin in learning4k" configurationId="JUnit" />
+    <history-entry file="BackpropagationTests - 2016.03.09 at 01h 19m 06s.xml">
+      <configuration name="BackpropagationTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="kotlin_in_learning4k - 2016.03.09 at 00h 51m 14s.xml">
-      <configuration name="kotlin in learning4k" configurationId="JUnit" />
+    <history-entry file="BackpropagationTests - 2016.03.09 at 01h 19m 28s.xml">
+      <configuration name="BackpropagationTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="kotlin_in_learning4k - 2016.03.09 at 00h 51m 23s.xml">
-      <configuration name="kotlin in learning4k" configurationId="JUnit" />
+    <history-entry file="BackpropagationTests - 2016.03.09 at 01h 19m 41s.xml">
+      <configuration name="BackpropagationTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="kotlin_in_learning4k - 2016.03.09 at 00h 51m 40s.xml">
-      <configuration name="kotlin in learning4k" configurationId="JUnit" />
+    <history-entry file="BackpropagationTests - 2016.03.09 at 01h 20m 41s.xml">
+      <configuration name="BackpropagationTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="kotlin_in_learning4k - 2016.03.09 at 00h 52m 32s.xml">
-      <configuration name="kotlin in learning4k" configurationId="JUnit" />
+    <history-entry file="BackpropagationTests - 2016.03.09 at 01h 20m 51s.xml">
+      <configuration name="BackpropagationTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="kotlin_in_learning4k - 2016.03.09 at 00h 53m 19s.xml">
-      <configuration name="kotlin in learning4k" configurationId="JUnit" />
+    <history-entry file="BackpropagationTests - 2016.03.09 at 01h 21m 08s.xml">
+      <configuration name="BackpropagationTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="kotlin_in_learning4k - 2016.03.09 at 00h 53m 32s.xml">
-      <configuration name="kotlin in learning4k" configurationId="JUnit" />
+    <history-entry file="BackpropagationTests - 2016.03.09 at 01h 21m 20s.xml">
+      <configuration name="BackpropagationTests" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58995000" />
+    <option name="totallyTimeSpent" value="60778000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1402,7 +1408,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="31" width="1920" height="1026" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3265306" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1410,7 +1416,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33082706" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5843179" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15388711" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1456,7 +1462,8 @@
     <MESSAGE value="added backprop training test" />
     <MESSAGE value="added backprop training test (multi example)" />
     <MESSAGE value="fixed BackpropagationTests" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed BackpropagationTests" />
+    <MESSAGE value="made tests faster" />
+    <option name="LAST_COMMIT_MESSAGE" value="made tests faster" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -8480,8 +8487,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/kotlin/BackpropagationTests.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44533762">
-          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.54404145">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding>
             <element signature="e#0#85#0" expanded="true" />
           </folding>
