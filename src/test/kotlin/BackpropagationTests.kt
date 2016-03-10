@@ -5,7 +5,7 @@ import kotlin.test.assertEquals
 class BackpropagationTests : Spek() { init {
     fun randomNetwork() = Network(
             Layer(4, Identity),
-            Layer(4, Relu),
+            Layer(2, Relu),
             Layer(4, Relu)
     ).apply {
         weightsMatrices.forEach { it.elements.indices.forEach { indexes -> it.elements[indexes.first, indexes.second] /= WeightsMatrix.defaultRandomInitEpsilon.toFloat() } }
@@ -33,7 +33,7 @@ class BackpropagationTests : Spek() { init {
                 }
             }
 
-            for (i in 0..200) {
+            for (i in 0..100) {
                 on("training the network many times with the same example") {
                     var errors = ArrayList<Float>()
                     var n = randomNetwork()

@@ -78,19 +78,19 @@ class StandardBackpropagation(cost: Cost = SquaredError) : Backpropagation {
         }
         val outputDelta = output.zip(prediction) { output, prediction -> output - prediction }
 
-        var delta = outputDelta
+        var outgoingDelta = outputDelta
         return network.weightsMatrices.indices.reversed().map { weightsIndex ->
-            val activation = activations[weightsIndex]
+            val incomingActivation = activations[weightsIndex]
             val weightsMatrix = network.weightsMatrices[weightsIndex]
             val gradientMatrix = gradientMatrix(
-                    incomingActivation = activation,
+                    incomingActivation = incomingActivation,
                     weightsMatrix = weightsMatrix,
-                    outgoingDelta = delta
+                    outgoingDelta = outgoingDelta
             )
 
             //delta not needed for input:
             if (weightsIndex != 0) {
-                delta = delta(activation = activation, outgoingWeightsMatrix = weightsMatrix, nextDelta = delta)
+                outgoingDelta = delta(activation = incomingActivation, outgoingWeightsMatrix = weightsMatrix, nextDelta = outgoingDelta)
             }
 
             gradientMatrix
