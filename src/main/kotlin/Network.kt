@@ -7,6 +7,7 @@ class Network private constructor(val shape: NetworkShape, val weightsMatrices: 
 
     constructor(vararg layers: Layer) : this(shape = NetworkShape(layers.toList()))
 
+    fun activationsByLayer(input: List<Float>) = weightsMatrices.fold(listOf(input), { activationsByLayer, weight -> activationsByLayer + listOf(weight(activationsByLayer.last())) })
     operator fun invoke(input: List<Float>) = weightsMatrices.fold(input, { data, weight -> weight(data) })
 
     fun descended(gradientMatrices: List<INDArray>, learningRate: Float) =
@@ -36,11 +37,11 @@ class WeightsMatrix(val shape: WeightsShape, val elements: INDArray) {
             throw IllegalArgumentException("${shape.inputSize} input values expected, found ${input.count()}.")
 
         val x = input.toColumnWithBiasUnit()
-        val y = elements.transpose() * x
-        return y.vectorToList().map { shape.activation(it) }
+        val y = elements * x
+        return y.vectorToList().map { shape.activationFunction(it) }
     }
 
-    private fun List<Float>.toColumnWithBiasUnit() = (listOf(1.0f) + this).toColumnVector()
+    private fun List<Float>.toColumnWithBiasUnit() = withBiasUnit().toColumnVector()
 
     companion object {
         val defaultRandomInitEpsilon = 0.01

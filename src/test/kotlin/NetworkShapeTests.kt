@@ -10,7 +10,7 @@ class NetworkShapeTests : Spek() { init {
         ))
 
         on("getting the input activation function") {
-            val a = n.inputActivation
+            val a = n.inputActivationFunction
 
             it("should be the given function") {
                 assertEquals(Identity, a)

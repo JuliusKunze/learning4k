@@ -5,8 +5,8 @@ class NetworkTests : Spek() { init {
     given("a network with 3 layers") {
         val a = Network(
                 Layer(3, Identity),
-                Layer(4, Relu),
-                Layer(5, Relu)
+                Layer(4, Sigmoid),
+                Layer(5, Sigmoid)
         )
 
         on("getting the weight matrices") {
@@ -27,7 +27,7 @@ class NetworkTests : Spek() { init {
     }
 
     given("a weights matrix") {
-        val weights = WeightsMatrix(WeightsShape(inputSize = 3, outputSize = 2, activation = Relu))
+        val weights = WeightsMatrix(WeightsShape(inputSize = 3, outputSize = 2, activationFunction = Relu))
 
         on("invoking it") {
             val x = listOf(5f, 3f, 1f)
@@ -41,9 +41,10 @@ class NetworkTests : Spek() { init {
     }
 
     given("a weights matrix with just 1 input") {
-        val weights = WeightsMatrix(WeightsShape(inputSize = 1, outputSize = 3, activation = Relu), elements = listOf(
-                listOf(1f, 0f, 4f),
-                listOf(0f, 3f, 4f)))
+        val weights = WeightsMatrix(WeightsShape(inputSize = 1, outputSize = 3, activationFunction = Relu), elements = listOf(
+                listOf(1f, 0f),
+                listOf(0f, 3f),
+                listOf(4f, 4f)))
 
         on("invoking it") {
             val y = weights(listOf(1.5f))

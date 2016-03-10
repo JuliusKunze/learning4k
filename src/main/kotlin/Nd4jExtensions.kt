@@ -23,3 +23,6 @@ fun INDArray.vectorToList() = if (isColumnVector || isRowVector)
     throw IllegalStateException("Row or column vector expected.")
 
 fun matrix(rowCount: Int, columnCount: Int, element: (Int, Int) -> Float) = Nd4j.create(Array(rowCount, { row -> FloatArray(columnCount, { column -> element(row, column) }) }))
+
+fun List<Float>.withBiasUnit() = listOf(1.0f) + this
+fun INDArray.withoutBiasUnit() = vectorToList().drop(1).toColumnVector()
