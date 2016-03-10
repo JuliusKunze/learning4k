@@ -17,51 +17,6 @@ class Network private constructor(val shape: NetworkShape, val weightsMatrices: 
     override fun toString() = weightsMatrices.map { it.toString() }.joinToString()
 }
 
-interface Backpropagation {
-    fun gradientsMatrices(network: Network, example: LabeledData): List<INDArray>
-
-    fun trained(network: Network, example: LabeledData, learningRate: Float) =
-            network.descended(gradientsMatrices(network, example), learningRate)
-
-    fun trained(network: Network, examples: List<LabeledData>, learningRate: Float) =
-            examples.fold(network) { network, example -> trained(network, example, learningRate) }
-}
-
-class NumericalBackpropagation(val distance: Float = 1e-5f, val cost: Cost = SquaredError) : Backpropagation {
-    override fun gradientsMatrices(network: Network, example: LabeledData): List<INDArray> {
-        val modified = network.copy()
-        return network.weightsMatrices.mapIndexed { weightsMatrixIndex, weightsMatrix ->
-            matrix(rowCount = weightsMatrix.shape.matrixRowCount, columnCount = weightsMatrix.shape.matrixColumnCount)
-            { row, column ->
-                val originalValue = weightsMatrix.elements[row, column]
-
-                fun set(alternativeValue: Float) {
-                    modified.weightsMatrices[weightsMatrixIndex].elements[row, column] = alternativeValue
-                }
-
-                fun cost(alternativeValue: Float): Float {
-                    set(alternativeValue)
-                    val cost = cost(example, modified)
-                    set(originalValue)
-                    return cost
-                }
-
-                (cost(originalValue + distance) - cost(originalValue - distance)) / (2 * distance)
-            }
-        }
-    }
-}
-
-class StandardBackpropagation(val cost: Cost = SquaredError) : Backpropagation {
-    override fun gradientsMatrices(network: Network, example: LabeledData): List<INDArray> {
-        val output = network.invoke(example.input)
-        val prediction = example.output
-        val deltaOutput = output.zip(prediction) { output, prediction -> output - prediction }
-
-        throw NotImplementedError()
-    }
-}
-
 class WeightsMatrix(val shape: WeightsShape, val elements: INDArray) {
     init {
         assert(shape.matrixRowCount == elements.rows())
@@ -82,10 +37,10 @@ class WeightsMatrix(val shape: WeightsShape, val elements: INDArray) {
 
         val x = input.toColumnWithBiasUnit()
         val y = elements.transpose() * x
-        return y.toList().map { shape.activation(it) }
+        return y.vectorToList().map { shape.activation(it) }
     }
 
-    private fun List<Float>.toColumnWithBiasUnit() = (listOf(1.0f) + this).toColumn()
+    private fun List<Float>.toColumnWithBiasUnit() = (listOf(1.0f) + this).toColumnVector()
 
     companion object {
         val defaultRandomInitEpsilon = 0.01

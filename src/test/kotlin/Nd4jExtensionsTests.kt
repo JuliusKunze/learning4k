@@ -6,7 +6,7 @@ class Nd4jExtensionsTests : Spek() {init {
         val l = listOf(1.0f, 3.0f, 2.0f)
 
         on("converting it to a column") {
-            val c = l.toColumn()
+            val c = l.toColumnVector()
 
             it("should be a column") {
                 assert(c.isColumnVector)
@@ -22,7 +22,7 @@ class Nd4jExtensionsTests : Spek() {init {
         }
 
         on("converting it to a row") {
-            val r = l.toRow()
+            val r = l.toRowVector()
 
             it("should be a row") {
                 assert(r.isRowVector)

@@ -59,7 +59,7 @@ class NetworkTests : Spek() { init {
         val h1 = 0.5f + x * 3.0f
         val h2 = 1.0f + h1 * 5.0f
         val expectedY = 2.0f + h2 * 3.0f
-        val example = LabeledData(listOf(x), listOf(expectedY))
+        val example = LabeledExample(listOf(x), listOf(expectedY))
 
         fun untrainedNetwork(): Network {
             return Network(
@@ -79,7 +79,7 @@ class NetworkTests : Spek() { init {
                     listOf(2.0f, 3.0f)
             )
 
-            weights.withIndex().forEach { network.weightsMatrices[it.index].elements.putRow(0, it.value.toRow()) }
+            weights.withIndex().forEach { network.weightsMatrices[it.index].elements.putRow(0, it.value.toRowVector()) }
             return network
         }
 
@@ -100,7 +100,7 @@ class NetworkTests : Spek() { init {
         }
 
         on("getting the squared error for the network output + 2") {
-            val error = SquaredError(LabeledData(listOf(x), listOf(expectedY + 2)), network())
+            val error = SquaredError(LabeledExample(listOf(x), listOf(expectedY + 2)), network())
 
             it("should be 4/2") {
                 assertEquals(error, 4f / 2)

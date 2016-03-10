@@ -1,7 +1,7 @@
 interface Cost {
     operator fun invoke(prediction: Float, target: Float): Float
 
-    operator fun invoke(labeledData: LabeledData, network: Network) =
+    operator fun invoke(labeledData: LabeledExample, network: Network) =
             network(labeledData.input).zip(labeledData.output).
             map { invoke(prediction = it.first, target = it.second) }.sum ()
 }
