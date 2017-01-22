@@ -1,17 +1,20 @@
+package learning4k
+
 import org.nd4j.linalg.api.ndarray.INDArray
 
 interface Backpropagation {
     val cost: Cost
 
     fun gradientsMatrices(network: Network, example: LabeledExample): List<INDArray>
+    fun averagedGradientsMatrices(network: Network, example: List<LabeledExample>): List<INDArray> {
+        val all = example.map { gradientsMatrices(network, it) }
+        return network.weightsMatrices.indices.map { index -> all.map { it[index] }.average() }
+    }
 
-    fun trained(network: Network, example: LabeledExample, learningRate: Float) =
-            network.descended(gradientsMatrices(network, example), learningRate)
+    fun trained(network: Network, examples: List<LabeledExample>, learningRate: Float, steps: Int = 1) =
+            (1..steps).fold(network) { network, step -> network.descended(averagedGradientsMatrices(network, examples), learningRate) }
 
-    fun trained(network: Network, examples: List<LabeledExample>, learningRate: Float) =
-            examples.fold(network) { network, example -> trained(network, example, learningRate) }
-
-    fun withValidation(validator: Backpropagation = NumericalBackpropagation(cost), tolerance: Float = 1e-4f): Backpropagation = object : Backpropagation {
+    fun withValidation(validator: Backpropagation = NumericalBackpropagation(cost), tolerance: Float = 1e-8f): Backpropagation = object : Backpropagation {
         override val cost = this@Backpropagation.cost
 
         override fun gradientsMatrices(network: Network, example: LabeledExample): List<INDArray> {
@@ -29,9 +32,7 @@ interface Backpropagation {
                 }
 
                 val maxDeviation = matrix.indices.map { Deviation(it) }.maxBy { it.deviation }!!
-                if (maxDeviation.deviation > tolerance) {
-                    throw AssertionError("Deviation too high. First failure in layer with weight matrix $matrixIndex with maximum deviation ${maxDeviation.deviation} at matrix location ${maxDeviation.index}. Expected:\n$expectedMatrix, found\n$matrix")
-                }
+                assert(maxDeviation.deviation <= tolerance) { "Mismatch in weight matrix $matrixIndex with maximum deviation ${maxDeviation.deviation} at (row, column)=${maxDeviation.index}. Expected:\n$expectedMatrix, found\n$matrix" }
             }
 
             return result
@@ -39,9 +40,7 @@ interface Backpropagation {
     }
 }
 
-class NumericalBackpropagation(cost: Cost = SquaredError, val distance: Float = 1e-5f) : Backpropagation {
-    override val cost = cost
-
+class NumericalBackpropagation(override val cost: Cost = SquaredError, val epsilon: Float = 1e-4f) : Backpropagation {
     override fun gradientsMatrices(network: Network, example: LabeledExample): List<INDArray> {
         val modified = network.copy()
         return network.weightsMatrices.mapIndexed { weightsMatrixIndex, weightsMatrix ->
@@ -60,15 +59,13 @@ class NumericalBackpropagation(cost: Cost = SquaredError, val distance: Float = 
                     return cost
                 }
 
-                (cost(originalValue + distance) - cost(originalValue - distance)) / (2 * distance)
+                (cost(originalValue + epsilon) - cost(originalValue - epsilon)) / (2 * epsilon)
             }
         }
     }
 }
 
-class StandardBackpropagation(cost: Cost = SquaredError) : Backpropagation {
-    override val cost = cost
-
+class StandardBackpropagation(override val cost: Cost = SquaredError) : Backpropagation {
     override fun gradientsMatrices(network: Network, example: LabeledExample): List<INDArray> {
         val activations = network.activationsByLayer(example.input)
         val prediction = example.output

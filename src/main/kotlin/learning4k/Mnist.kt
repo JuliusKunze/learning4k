@@ -1,3 +1,5 @@
+package learning4k
+
 import java.io.*
 import java.net.URL
 import java.nio.ByteBuffer
@@ -10,14 +12,14 @@ import java.util.zip.GZIPInputStream
  */
 object Mnist {
     val data by lazy {
-        LabeledExamples(training = training.map { it.toLabeledData() }, test = test.map { it.toLabeledData() })
+        learning4k.LabeledExamples(training = training.map { it.toLabeledData() }, test = test.map { it.toLabeledData() })
     }
 
     val test by lazy {
-        MnistProvider(
+        (learning4k.MnistProvider(
                 labelFileUrl = "http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz",
                 imageFileUrl = "http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz"
-        )()
+        ))()
     }
 
     val training by lazy {
@@ -29,7 +31,7 @@ object Mnist {
 }
 
 data class LabeledMnistImage(val imageData: List<Byte>, val label: Int) {
-    fun toLabeledData() = LabeledExample(input = imageData.map { it.toFloat() }, output = listOf(label.toFloat()))
+    fun toLabeledData() = LabeledExample(input = imageData.map { it.toFloat() / 255 }, output = oneHot(label, size = 10))
 }
 
 /**

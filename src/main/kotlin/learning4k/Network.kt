@@ -1,3 +1,5 @@
+package learning4k
+
 import org.nd4j.linalg.api.ndarray.INDArray
 import org.nd4j.linalg.api.rng.DefaultRandom
 import org.nd4j.linalg.factory.Nd4j
@@ -7,8 +9,8 @@ class Network private constructor(val shape: NetworkShape, val weightsMatrices: 
 
     constructor(vararg layers: Layer) : this(shape = NetworkShape(layers.toList()))
 
-    fun activationsByLayer(input: List<Float>) = weightsMatrices.fold(listOf(input), { activationsByLayer, weight -> activationsByLayer + listOf(weight(activationsByLayer.last())) })
-    operator fun invoke(input: List<Float>) = weightsMatrices.fold(input, { data, weight -> weight(data) })
+    fun activationsByLayer(input: List<Float>) = weightsMatrices.fold(listOf(input.map { shape.inputActivationFunction(it) }), { activationsByLayer, weight -> activationsByLayer + listOf(weight(activationsByLayer.last())) })
+    operator fun invoke(input: List<Float>) = activationsByLayer(input).last()
 
     fun descended(gradientMatrices: List<INDArray>, learningRate: Float) =
             Network(shape, weightsMatrices.zip(gradientMatrices) { weightMatrix, gradientMatrix -> WeightsMatrix(weightMatrix.shape, weightMatrix.elements - gradientMatrix * learningRate) })
@@ -30,7 +32,7 @@ class WeightsMatrix(val shape: WeightsShape, val elements: INDArray) {
             shape: WeightsShape,
             randomInitEpsilon: Double = defaultRandomInitEpsilon,
             seed: Long = System.currentTimeMillis()) :
-    this(shape, Nd4j.rand(shape.matrixRowCount, shape.matrixColumnCount, -randomInitEpsilon, randomInitEpsilon, DefaultRandom(seed)))
+            this(shape, Nd4j.rand(shape.matrixRowCount, shape.matrixColumnCount, -randomInitEpsilon, randomInitEpsilon, DefaultRandom(seed)))
 
     operator fun invoke(input: List<Float>): List<Float> {
         if (input.count() != shape.inputSize)

@@ -1,3 +1,5 @@
+package learning4k
+
 interface ActivationFunction {
     operator fun invoke(z: Float): Float
     /**

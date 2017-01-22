@@ -1,3 +1,5 @@
+package learning4k
+
 data class Layer(val size: Int, val activationFunction: ActivationFunction)
 
 data class WeightsShape(val inputSize: Int, val outputSize: Int, val activationFunction: ActivationFunction) {

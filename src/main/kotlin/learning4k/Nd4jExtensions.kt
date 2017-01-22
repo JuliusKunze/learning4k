@@ -1,3 +1,5 @@
+package learning4k
+
 import org.nd4j.linalg.api.ndarray.INDArray
 import org.nd4j.linalg.factory.Nd4j
 
@@ -24,5 +26,10 @@ fun INDArray.vectorToList() = if (isColumnVector || isRowVector)
 
 fun matrix(rowCount: Int, columnCount: Int, element: (Int, Int) -> Float) = Nd4j.create(Array(rowCount, { row -> FloatArray(columnCount, { column -> element(row, column) }) }))
 
+
 fun List<Float>.withBiasUnit() = listOf(1.0f) + this
 fun INDArray.withoutBiasUnit() = vectorToList().drop(1).toColumnVector()
+fun List<INDArray>.average() = if (isEmpty()) throw IllegalArgumentException("List of matrices to average cannot be empty.") else
+    fold(this.first()) { old, new -> old + new } / size
+
+fun oneHot(index: Int, size: Int) = (0..size - 1).map { if (it == index) 1f else 0f }

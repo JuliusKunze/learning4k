@@ -2,7 +2,7 @@ group 'learning4k'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.0.0'
+    ext.kotlin_version = '1.0.5'
     ext.spek_version = '0.1.195'
 
     repositories {
